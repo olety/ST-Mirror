@@ -1,0 +1,229 @@
+# ====================================
+# Project-Specific Files
+# ====================================
+
+# User data directories
+ST_DATA/
+
+# Workspace and output directories
+workspace/
+workspaces/
+*_workspace/
+*_output/
+debug/
+evidence/
+profiles/
+reports/
+segments/
+aggregations/
+sample_output/
+test_output/
+temp/
+tmp/
+
+# Logs
+*.log
+
+# Local configuration
+.claude/
+
+
+# ====================================
+# Python
+# ====================================
+
+# Byte-compiled / optimized
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+
+# Distribution / packaging
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+share/python-wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# PyInstaller
+*.manifest
+*.spec
+
+# Installer logs
+pip-log.txt
+pip-delete-this-directory.txt
+
+# Testing
+htmlcov/
+.tox/
+.nox/
+.coverage
+.coverage.*
+.cache
+nosetests.xml
+coverage.xml
+*.cover
+*.py,cover
+.hypothesis/
+.pytest_cache/
+cover/
+
+# Translations
+*.mo
+*.pot
+
+# Sphinx documentation
+docs/_build/
+
+# Jupyter Notebook
+.ipynb_checkpoints
+
+# IPython
+profile_default/
+ipython_config.py
+
+# Environments
+.env
+.venv
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
+
+# Type checkers
+.mypy_cache/
+.dmypy.json
+dmypy.json
+.pyre/
+.pytype/
+
+# Linters and formatters
+.ruff_cache/
+
+# LSP config
+pyrightconfig.py
+pyrightconfig.json
+
+# Cython
+cython_debug/
+
+
+# ====================================
+# Package Managers
+# ====================================
+
+# pipenv
+#Pipfile.lock
+
+# poetry
+#poetry.lock
+poetry.toml
+
+# pdm
+#pdm.lock
+.pdm.toml
+
+# uv
+uv.lock
+.uv/
+
+# Rye
+.rye/
+
+# PEP 582
+__pypackages__/
+
+
+# ====================================
+# IDEs and Editors
+# ====================================
+
+# VSCode
+.vscode/
+*.code-workspace
+
+# JetBrains (PyCharm, IntelliJ, etc.)
+.idea/
+*.iml
+*.iws
+*.ipr
+
+# Vim
+*.swp
+*.swo
+*~
+.*.sw?
+
+# Emacs
+\#*\#
+.\#*
+
+# Sublime Text
+*.sublime-project
+*.sublime-workspace
+
+# Spyder
+.spyderproject
+.spyproject
+
+# Rope
+.ropeproject
+
+
+# ====================================
+# Operating Systems
+# ====================================
+
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+Icon
+._*
+.DocumentRevisions-V100
+.fseventsd
+.Spotlight-V100
+.TemporaryItems
+.Trashes
+.VolumeIcon.icns
+.com.apple.timemachine.donotpresent
+.AppleDB
+.AppleDesktop
+Network Trash Folder
+Temporary Items
+.apdisk
+*.icloud
+
+# Linux
+*~
+.fuse_hidden*
+.directory
+.Trash-*
+.nfs*
+
+
+# ====================================
+# Backup and Archive Files
+# ====================================
+
+*.bak
+*.backup
+*.old
+*.zip
+*.tar.gz
+*.tgz
+*.tar.bz2
