@@ -1,0 +1,429 @@
+{
+  "thinking": "Single profile analysis - no aggregation needed. Total decisions: 5 (low sample size, medium confidence). Profile shows high-stakes medical crisis with ethical dilemmas. Key patterns: systematic evidence-based thinking, moral courage under pressure, active anxiety management. Notable: extremely high Conscientiousness (0.92) with Industriousness (0.95) and Orderliness (0.85) - rare combination of productivity AND structure. Openness split: high Intellect (0.85), low Experience (0.45) - philosophical/analytical but not creative/aesthetic. Agreeableness split: high Compassion (0.82), low Politeness (0.25) - cares deeply but confronts authority directly. Neuroticism: Withdrawal (0.75) > Volatility (0.55) - anxiety/depression over anger/irritability. Values: Universalism (0.92) and Benevolence (0.85) dominate over Conformity (0.22) and Tradition (0.18). Archetypal Hero/Sage/Caregiver integration with Rebel shadow. Defense mechanisms mature: sublimation, altruism, anticipation. No temporal evolution possible (single session).",
+  "period": "2025-04",
+  "level": "month",
+  "date_range": {
+    "start": "2025-04-18T00:00:00",
+    "end": "2025-04-18T00:00:00"
+  },
+  "current_state": {
+    "big5": {
+      "openness": {
+        "score": 0.72,
+        "confidence": "medium",
+        "evidence": [
+          "Diagnosed cholera through systematic pattern recognition",
+          "Sought therapy for self-improvement",
+          "Advocated for systemic infrastructure changes"
+        ],
+        "aspects": {
+          "intellect": {
+            "score": 0.85,
+            "confidence": "high",
+            "evidence": [
+              "I can't unknow that this is cholera. I can't unknow that the Broad Street pump is contaminated.",
+              "Prioritizing empirical medical evidence over institutional hierarchy"
+            ]
+          },
+          "openness_to_experience": {
+            "score": 0.45,
+            "confidence": "low",
+            "evidence": [
+              "No creative/aesthetic choices documented",
+              "Focused on concrete medical evidence over abstract speculation"
+            ]
+          }
+        }
+      },
+      "conscientiousness": {
+        "score": 0.92,
+        "confidence": "high",
+        "evidence": [
+          "Refused to falsify medical records despite career threat",
+          "Engaged in six months of therapy for anxiety management",
+          "Systematic documentation and evidence-based diagnosis"
+        ],
+        "aspects": {
+          "industriousness": {
+            "score": 0.95,
+            "confidence": "high",
+            "evidence": [
+              "Advocated for systemic change beyond immediate crisis",
+              "Maintained professional standards under extreme pressure",
+              "Learning to function effectively despite discomfort"
+            ]
+          },
+          "orderliness": {
+            "score": 0.85,
+            "confidence": "medium",
+            "evidence": [
+              "Structured self-regulation through breathing and journaling",
+              "Meticulous medical documentation and diagnostic accuracy"
+            ]
+          }
+        }
+      },
+      "extraversion": {
+        "score": 0.58,
+        "confidence": "medium",
+        "evidence": [
+          "Direct confrontation of authority figures",
+          "Assertive advocacy for vulnerable populations",
+          "No evidence of social enthusiasm or gregariousness"
+        ],
+        "aspects": {
+          "enthusiasm": {
+            "score": 0.35,
+            "confidence": "low",
+            "evidence": [
+              "No positive social engagement documented",
+              "Task-focused rather than relationship-focused interactions"
+            ]
+          },
+          "assertiveness": {
+            "score": 0.88,
+            "confidence": "high",
+            "evidence": [
+              "Directly challenged Board Chairman on class prejudice",
+              "Refused to comply with falsification orders",
+              "I'm not apologizing for prioritizing patient safety"
+            ]
+          }
+        }
+      },
+      "agreeableness": {
+        "score": 0.48,
+        "confidence": "medium",
+        "evidence": [
+          "High compassion for East End populations",
+          "Low deference to authority and social norms",
+          "Direct rather than diplomatic confrontation"
+        ],
+        "aspects": {
+          "compassion": {
+            "score": 0.82,
+            "confidence": "high",
+            "evidence": [
+              "Your lives have the same value as any child in Kensington or Mayfair",
+              "Prioritized patient safety over career concerns",
+              "Five lives lost reflection shows deep empathy"
+            ]
+          },
+          "politeness": {
+            "score": 0.25,
+            "confidence": "medium",
+            "evidence": [
+              "Explicitly named class bias rather than using diplomatic language",
+              "Refused to apologize for principled stance",
+              "No deference to institutional hierarchy"
+            ]
+          }
+        }
+      },
+      "neuroticism": {
+        "score": 0.68,
+        "confidence": "medium",
+        "evidence": [
+          "High anxiety during confrontations",
+          "Vulnerability about employment fears",
+          "Active anxiety management through therapy"
+        ],
+        "aspects": {
+          "volatility": {
+            "score": 0.55,
+            "confidence": "medium",
+            "evidence": [
+              "Medium anger at class-based devaluation",
+              "Generally maintained emotional regulation under pressure"
+            ]
+          },
+          "withdrawal": {
+            "score": 0.75,
+            "confidence": "high",
+            "evidence": [
+              "Admitting fear of unemployment to Dr. Fletcher",
+              "High anxiety when threatened with dismissal",
+              "Six months of therapy for anxiety management"
+            ]
+          }
+        }
+      }
+    },
+    "attachment": {
+      "primary_style": "secure",
+      "anxiety_dimension": 0.42,
+      "avoidance_dimension": 0.18,
+      "evidence": [
+        "Sought support from Dr. Fletcher during vulnerability",
+        "Maintained boundaries and principles under pressure",
+        "Therapy engagement shows secure base seeking",
+        "Some anxiety spikes during authority conflicts"
+      ]
+    },
+    "schwartz_values": {
+      "self_direction": {
+        "score": 0.88,
+        "confidence": "high",
+        "evidence": [
+          "Independent medical diagnosis despite pressure",
+          "Refused to compromise professional integrity"
+        ]
+      },
+      "stimulation": {
+        "score": 0.35,
+        "confidence": "low",
+        "evidence": [
+          "No novelty-seeking behaviors documented",
+          "Focused on crisis resolution over excitement"
+        ]
+      },
+      "hedonism": {
+        "score": 0.25,
+        "confidence": "low",
+        "evidence": [
+          "No pleasure-seeking choices documented",
+          "Prioritized duty over personal comfort"
+        ]
+      },
+      "achievement": {
+        "score": 0.75,
+        "confidence": "medium",
+        "evidence": [
+          "Promotion for evidence-based work",
+          "Professional competence validation",
+          "Systemic advocacy efforts"
+        ]
+      },
+      "power": {
+        "score": 0.15,
+        "confidence": "medium",
+        "evidence": [
+          "Rejected institutional power plays",
+          "No status-seeking behaviors documented"
+        ]
+      },
+      "security": {
+        "score": 0.65,
+        "confidence": "medium",
+        "evidence": [
+          "Sought therapy for anxiety management",
+          "Some concern for employment security"
+        ]
+      },
+      "conformity": {
+        "score": 0.22,
+        "confidence": "high",
+        "evidence": [
+          "Refused to comply with falsification orders",
+          "Challenged institutional norms explicitly"
+        ]
+      },
+      "tradition": {
+        "score": 0.18,
+        "confidence": "low",
+        "evidence": [
+          "No respect for traditional hierarchy shown",
+          "Challenged established class systems"
+        ]
+      },
+      "benevolence": {
+        "score": 0.85,
+        "confidence": "high",
+        "evidence": [
+          "Equal value assertion for East End lives",
+          "Patient safety prioritization",
+          "Five lives lost reflection"
+        ]
+      },
+      "universalism": {
+        "score": 0.92,
+        "confidence": "high",
+        "evidence": [
+          "Social justice advocacy for poor populations",
+          "Systemic infrastructure change focus",
+          "Equal resource allocation advocacy"
+        ]
+      }
+    },
+    "jungian_archetypes": {
+      "dominant_archetypes": [
+        {
+          "archetype": "The Hero",
+          "strength": 0.88,
+          "confidence": "high",
+          "evidence": [
+            "Transformation through crisis trials",
+            "Willingness to sacrifice career for principles",
+            "Courage in confronting powerful adversaries"
+          ]
+        },
+        {
+          "archetype": "The Sage",
+          "strength": 0.82,
+          "confidence": "high",
+          "evidence": [
+            "Evidence-based medical diagnosis",
+            "Systematic pattern recognition",
+            "Wisdom through therapy and reflection"
+          ]
+        },
+        {
+          "archetype": "The Caregiver",
+          "strength": 0.78,
+          "confidence": "high",
+          "evidence": [
+            "Patient safety prioritization",
+            "Public health advocacy",
+            "Equal care for vulnerable populations"
+          ]
+        },
+        {
+          "archetype": "The Rebel",
+          "strength": 0.72,
+          "confidence": "medium",
+          "evidence": [
+            "Challenged class-based status quo",
+            "Refused institutional compliance demands",
+            "Disrupted traditional power structures"
+          ]
+        },
+        {
+          "archetype": "The Self",
+          "strength": 0.65,
+          "confidence": "medium",
+          "evidence": [
+            "Integration through therapy",
+            "Alignment of values and actions",
+            "Conscious self-development work"
+          ]
+        }
+      ],
+      "shadow_work": "Acknowledged and working with anxiety/vulnerability through therapy rather than repression"
+    },
+    "behavioral_patterns": [
+      {
+        "if_situation": "Authority demands ethical compromise",
+        "then_response": "Refuse and accept consequences while seeking support",
+        "frequency": 1,
+        "confidence": "high"
+      },
+      {
+        "if_situation": "Vulnerable populations face systemic barriers",
+        "then_response": "Explicitly name injustice and advocate for equal treatment",
+        "frequency": 1,
+        "confidence": "high"
+      },
+      {
+        "if_situation": "High-stakes medical decisions required",
+        "then_response": "Prioritize empirical evidence over political considerations",
+        "frequency": 1,
+        "confidence": "high"
+      }
+    ],
+    "defense_mechanisms": {
+      "primary": [
+        "sublimation",
+        "altruism",
+        "anticipation"
+      ],
+      "effectiveness": "high"
+    },
+    "emotional_profile": {
+      "dominant_emotions": [
+        "anxiety",
+        "anger",
+        "vulnerability"
+      ],
+      "emotional_range": "moderate",
+      "regulation_strategies": [
+        "cognitive restructuring through journaling",
+        "breathing techniques",
+        "therapy engagement",
+        "seeking social support"
+      ],
+      "common_triggers": [
+        "ethical compromises demanded by authority",
+        "class-based discrimination",
+        "medical documentation falsification"
+      ]
+    }
+  },
+  "evolution": {
+    "big5": {
+      "openness": {
+        "trajectory": "stable",
+        "early_average": 0.72,
+        "late_average": 0.72,
+        "change": 0,
+        "change_type": "stable",
+        "notes": "Single session - no temporal evolution possible",
+        "aspect_changes": {
+          "intellect": "stable at 0.85",
+          "openness_to_experience": "stable at 0.45"
+        }
+      },
+      "conscientiousness": {
+        "trajectory": "stable",
+        "early_average": 0.92,
+        "late_average": 0.92,
+        "change": 0,
+        "change_type": "stable",
+        "notes": "Consistently high throughout session",
+        "aspect_changes": {
+          "industriousness": "stable at 0.95",
+          "orderliness": "stable at 0.85"
+        }
+      },
+      "extraversion": {
+        "trajectory": "stable",
+        "early_average": 0.58,
+        "late_average": 0.58,
+        "change": 0,
+        "change_type": "stable",
+        "notes": "Assertive but not enthusiastic throughout",
+        "aspect_changes": {
+          "enthusiasm": "stable at 0.35",
+          "assertiveness": "stable at 0.88"
+        }
+      },
+      "agreeableness": {
+        "trajectory": "stable",
+        "early_average": 0.48,
+        "late_average": 0.48,
+        "change": 0,
+        "change_type": "stable",
+        "notes": "High compassion, low politeness maintained",
+        "aspect_changes": {
+          "compassion": "stable at 0.82",
+          "politeness": "stable at 0.25"
+        }
+      },
+      "neuroticism": {
+        "trajectory": "stable",
+        "early_average": 0.68,
+        "late_average": 0.68,
+        "change": 0,
+        "change_type": "stable",
+        "notes": "Moderate-high anxiety consistently managed",
+        "aspect_changes": {
+          "volatility": "stable at 0.55",
+          "withdrawal": "stable at 0.75"
+        }
+      }
+    },
+    "attachment": {
+      "trajectory": "stable",
+      "notes": "Secure base maintained with consistent anxiety spikes during authority conflicts"
+    },
+    "key_changes": []
+  },
+  "meta": {
+    "branches_count": 1,
+    "items_aggregated": 1,
+    "aggregation_method": "from_branches",
+    "confidence_notes": "Low decision count (5) limits temporal analysis but high-impact scenarios provide rich psychological evidence",
+    "total_decisions": 5,
+    "estimated_tokens": 2000
+  },
+  "period_summary": "This single-session profile reveals a medical professional operating at the intersection of scientific rigor and moral courage. The subject demonstrates exceptional conscientiousness (0.92) with both industriousness (0.95) and orderliness (0.85) - a rare combination suggesting someone who is both highly productive and systematically organized. Their openness profile shows high intellectual curiosity (0.85) but limited aesthetic openness (0.45), indicating a philosophical, analytical approach rather than creative exploration. Notably, their agreeableness presents a complex pattern: profound compassion (0.82) for vulnerable populations coupled with low politeness (0.25) toward authority - suggesting someone who cares deeply but confronts injustice directly rather than diplomatically. The neuroticism profile indicates anxiety primarily manifests as withdrawal (0.75) rather than volatility (0.55), with sophisticated regulation strategies including therapy, journaling, and breathing techniques. Values prioritize universalism (0.92) and benevolence (0.85) over conformity (0.22) and tradition (0.18), explaining their willingness to challenge institutional norms. Archetypally, they integrate Hero (moral courage), Sage (evidence-based thinking), and Caregiver (patient advocacy) with a Rebel shadow that explicitly names class-based injustice. This profile suggests someone who has developed mature defense mechanisms (sublimation, altruism, anticipation) to channel anxiety into systematic action for social justice. The secure attachment style enables them to seek support while maintaining principled boundaries under pressure."
+}

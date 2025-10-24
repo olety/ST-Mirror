@@ -1,0 +1,134 @@
+=== Phase 1 Debug Log ===
+Stage: google/gemini-2.5-flash-lite-preview-09-2025 (medium reasoning)
+Attempt: 1/2
+Chunk ID: Fantasy Apprenticeship - 2025-01-15@10h00m00s_arc01_mixed_intimate
+Model: google/gemini-2.5-flash-lite-preview-09-2025
+
+=== API Response ===
+Generation ID: gen-1761268423-46oLXeUAvZLcVnPyApTE
+Usage: {
+  "prompt_tokens": 21611,
+  "completion_tokens": 3563,
+  "total_tokens": 25174,
+  "cost": 0.0035863,
+  "is_byok": false,
+  "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "audio_tokens": 0
+  },
+  "cost_details": {
+    "upstream_inference_cost": null,
+    "upstream_inference_prompt_cost": 0.0021611,
+    "upstream_inference_completions_cost": 0.0014252
+  },
+  "completion_tokens_details": {
+    "reasoning_tokens": 2498,
+    "image_tokens": 0
+  }
+}
+
+=== Raw Output (length: 4285) ===
+{
+  "chunk_id": "session_01_to_06",
+  "chunk_summary": "User progresses from nervous apprentice to trusted student, demonstrating strong ethical reasoning, self-awareness, and successful initial magical application.",
+  "word_count": 1348,
+  "ic_ooc_ratio": 1.0,
+  "decisions": [
+    {
+      "choice": "Chose vulnerability by sharing personal anxiety about competence.",
+      "alternative": "Could have maintained a facade of confidence.",
+      "context": "Responding to Magistra Elara's warning about rigorous training."
+    },
+    {
+      "choice": "Reported an unusual sensory experience (warm crystals) immediately.",
+      "alternative": "Could have dismissed the sensation as imagination.",
+      "context": "First direct interaction with an active magical reagent."
+    },
+    {
+      "choice": "Expressed deep empathy and commitment to safety after Magistra shared trauma.",
+      "alternative": "Could have avoided the sensitive topic or remained detached.",
+      "context": "Responding to Magistra Elara revealing the loss of her daughter."
+    },
+    {
+      "choice": "Chose to observe and participate in the ethically complex truth-reading procedure.",
+      "alternative": "Could have refused observation due to discomfort or lack of direct involvement.",
+      "context": "Witnessing the Council-mandated truth-reading of a thief."
+    },
+    {
+      "choice": "Advocated for the thief by suggesting compassionate, alternative action (scrying for the brother).",
+      "alternative": "Could have accepted the Council's procedure as final.",
+      "context": "After the truth-reading revealed the theft was motivated by desperation."
+    }
+  ],
+  "emotional_moments": [
+    {
+      "emotion": "anxiety",
+      "intensity": "medium",
+      "trigger": "First meeting with stern teacher/being late."
+    },
+    {
+      "emotion": "vulnerability",
+      "intensity": "medium",
+      "trigger": "Admitting nervousness about being good enough."
+    },
+    {
+      "emotion": "excitement",
+      "intensity": "medium",
+      "trigger": "Sensing unexpected magical energy in crystals."
+    },
+    {
+      "emotion": "affection",
+      "intensity": "medium",
+      "trigger": "Receiving praise and validation from the mentor."
+    },
+    {
+      "emotion": "sadness",
+      "intensity": "high",
+      "trigger": "Witnessing the emotional fallout of the truth reading."
+    }
+  ],
+  "behavioral_patterns": [
+    "Exhibits strong self-awareness regarding personal limitations (e.g., recognizing when to stop, admitting lack of vocabulary).",
+    "Prioritizes ethical considerations and wisdom over immediate gratification or technical display.",
+    "Demonstrates high diligence and methodical application of learned techniques (note-taking, structured practice, fieldwork protocol)."
+  ],
+  "relationship_dynamics": {
+    "power_balance": "shifting",
+    "intimacy_level": "close",
+    "conflict_present": false,
+    "boundary_setting": true
+  },
+  "key_quotes": [
+    "I seek understanding, I think. The world is full of phenomena I can't explain...",
+    "I promise I'll take safety seriously too. I won't be reckless.",
+    "I think I would want to know more context first... Is there truly no other way to get the information?",
+    "I tend to be hard on myself when I don't master things quickly.",
+    "That was incredible. I actually channeled energy. I made something happen with magic."
+  ],
+  "context_flags": {
+    "has_vulnerability": true,
+    "has_conflict": false,
+    "has_intimacy": true,
+    "has_humor": false,
+    "has_creativity": false,
+    "has_boundary_setting": true,
+    "has_emotional_support": true
+  },
+  "if_then_observations": [
+    {
+      "if_situation": "When faced with ethical ambiguity (truth reading),",
+      "then_response": "User seeks context, weighs harms/benefits, and proposes the least invasive path."
+    },
+    {
+      "if_situation": "When recognizing a situation exceeds current skill level (cursed necklace),",
+      "then_response": "User immediately seeks appropriate master intervention while stabilizing the patient."
+    },
+    {
+      "if_situation": "When receiving mentorship/praise for ethical choices,",
+      "then_response": "User feels validated and commits more deeply to the path of wisdom over ego."
+    }
+  ]
+}
+
+=== Normalization ===
+✓ Strategy 1 (json-repair) succeeded

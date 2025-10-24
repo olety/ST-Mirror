@@ -1,0 +1,378 @@
+{
+  "thinking": "Analyzing 5 major decisions across a medical crisis scenario. Key patterns: 1) Consistent prioritization of empirical evidence over authority (100% of decisions), 2) Active self-regulation under stress (therapy, breathing, journaling), 3) Direct confrontation of systemic injustice. High-stakes professional context with life-or-death consequences. Evidence richness: Medium (5 decisions) but high-impact scenarios. Confidence levels calibrated accordingly.\n\nOpenness: High intellectual curiosity and systematic thinking (cholera diagnosis from pattern recognition), but low aesthetic/creative openness (no evidence of artistic/creative choices). Conscientiousness: Extremely high - meticulous documentation, systematic approach, therapy for self-improvement. Extraversion: Moderate - assertive in professional contexts but no social enthusiasm evidence. Agreeableness: Complex - high compassion for vulnerable populations but low politeness/deference to authority. Neuroticism: Moderate-high anxiety but excellent regulation strategies.\n\nAttachment patterns show secure base with anxious spikes during authority conflicts - seeks support (Dr. Fletcher) but maintains boundaries. Values prioritize universalism/benevolence over conformity/power. Archetypal Hero/Sage dominance with Shadow integration through therapy.",
+  "profile_id": "Victorian___Medical___Mystery_______2025_04_18@11h00m00s_20251024_101418",
+  "data_summary": {
+    "total_chunks": 1,
+    "total_decisions": 5,
+    "total_emotional_moments": 5,
+    "ic_ooc_ratio": 1.0
+  },
+  "big_five": {
+    "openness": {
+      "score": 0.72,
+      "confidence": "medium",
+      "evidence": [
+        "Diagnosed cholera through systematic pattern recognition",
+        "Sought therapy for self-improvement",
+        "Advocated for systemic infrastructure changes"
+      ],
+      "aspects": {
+        "intellect": {
+          "score": 0.85,
+          "confidence": "high",
+          "evidence": [
+            "I can't unknow that this is cholera. I can't unknow that the Broad Street pump is contaminated.",
+            "Prioritizing empirical medical evidence over institutional hierarchy"
+          ]
+        },
+        "openness_to_experience": {
+          "score": 0.45,
+          "confidence": "low",
+          "evidence": [
+            "No creative/aesthetic choices documented",
+            "Focused on concrete medical evidence over abstract speculation"
+          ]
+        }
+      }
+    },
+    "conscientiousness": {
+      "score": 0.92,
+      "confidence": "high",
+      "evidence": [
+        "Refused to falsify medical records despite career threat",
+        "Engaged in six months of therapy for anxiety management",
+        "Systematic documentation and evidence-based diagnosis"
+      ],
+      "aspects": {
+        "industriousness": {
+          "score": 0.95,
+          "confidence": "high",
+          "evidence": [
+            "Advocated for systemic change beyond immediate crisis",
+            "Maintained professional standards under extreme pressure",
+            "Learning to function effectively despite discomfort"
+          ]
+        },
+        "orderliness": {
+          "score": 0.85,
+          "confidence": "medium",
+          "evidence": [
+            "Structured self-regulation through breathing and journaling",
+            "Meticulous medical documentation and diagnostic accuracy"
+          ]
+        }
+      }
+    },
+    "extraversion": {
+      "score": 0.58,
+      "confidence": "medium",
+      "evidence": [
+        "Direct confrontation of authority figures",
+        "Assertive advocacy for vulnerable populations",
+        "No evidence of social enthusiasm or gregariousness"
+      ],
+      "aspects": {
+        "enthusiasm": {
+          "score": 0.35,
+          "confidence": "low",
+          "evidence": [
+            "No positive social engagement documented",
+            "Task-focused rather than relationship-focused interactions"
+          ]
+        },
+        "assertiveness": {
+          "score": 0.88,
+          "confidence": "high",
+          "evidence": [
+            "Directly challenged Board Chairman on class prejudice",
+            "Refused to comply with falsification orders",
+            "I'm not apologizing for prioritizing patient safety"
+          ]
+        }
+      }
+    },
+    "agreeableness": {
+      "score": 0.48,
+      "confidence": "medium",
+      "evidence": [
+        "High compassion for East End populations",
+        "Low deference to authority and social norms",
+        "Direct rather than diplomatic confrontation"
+      ],
+      "aspects": {
+        "compassion": {
+          "score": 0.82,
+          "confidence": "high",
+          "evidence": [
+            "Your lives have the same value as any child in Kensington or Mayfair",
+            "Prioritized patient safety over career concerns",
+            "Five lives lost reflection shows deep empathy"
+          ]
+        },
+        "politeness": {
+          "score": 0.25,
+          "confidence": "medium",
+          "evidence": [
+            "Explicitly named class bias rather than using diplomatic language",
+            "Refused to apologize for principled stance",
+            "No deference to institutional hierarchy"
+          ]
+        }
+      }
+    },
+    "neuroticism": {
+      "score": 0.68,
+      "confidence": "medium",
+      "evidence": [
+        "High anxiety during confrontations",
+        "Vulnerability about employment fears",
+        "Active anxiety management through therapy"
+      ],
+      "aspects": {
+        "volatility": {
+          "score": 0.55,
+          "confidence": "medium",
+          "evidence": [
+            "Medium anger at class-based devaluation",
+            "Generally maintained emotional regulation under pressure"
+          ]
+        },
+        "withdrawal": {
+          "score": 0.75,
+          "confidence": "high",
+          "evidence": [
+            "Admitting fear of unemployment to Dr. Fletcher",
+            "High anxiety when threatened with dismissal",
+            "Six months of therapy for anxiety management"
+          ]
+        }
+      }
+    }
+  },
+  "attachment": {
+    "primary_style": "secure",
+    "anxiety_dimension": 0.42,
+    "avoidance_dimension": 0.18,
+    "evidence": [
+      "Sought support from Dr. Fletcher during vulnerability",
+      "Maintained boundaries and principles under pressure",
+      "Therapy engagement shows secure base seeking",
+      "Some anxiety spikes during authority conflicts"
+    ]
+  },
+  "behavioral_patterns": [
+    {
+      "if_situation": "Authority demands ethical compromise",
+      "then_response": "Refuse and accept consequences while seeking support",
+      "frequency": 1,
+      "confidence": "high"
+    },
+    {
+      "if_situation": "Vulnerable populations face systemic barriers",
+      "then_response": "Explicitly name injustice and advocate for equal treatment",
+      "frequency": 1,
+      "confidence": "high"
+    },
+    {
+      "if_situation": "High-stakes medical decisions required",
+      "then_response": "Prioritize empirical evidence over political considerations",
+      "frequency": 1,
+      "confidence": "high"
+    }
+  ],
+  "emotional_profile": {
+    "dominant_emotions": [
+      "anxiety",
+      "anger",
+      "vulnerability"
+    ],
+    "emotional_range": "moderate",
+    "regulation_strategies": [
+      "cognitive restructuring through journaling",
+      "breathing techniques",
+      "therapy engagement",
+      "seeking social support"
+    ],
+    "common_triggers": [
+      "ethical compromises demanded by authority",
+      "class-based discrimination",
+      "medical documentation falsification"
+    ]
+  },
+  "schwartz_values": {
+    "self_direction": {
+      "score": 0.88,
+      "confidence": "high",
+      "evidence": [
+        "Independent medical diagnosis despite pressure",
+        "Refused to compromise professional integrity"
+      ]
+    },
+    "stimulation": {
+      "score": 0.35,
+      "confidence": "low",
+      "evidence": [
+        "No novelty-seeking behaviors documented",
+        "Focused on crisis resolution over excitement"
+      ]
+    },
+    "hedonism": {
+      "score": 0.25,
+      "confidence": "low",
+      "evidence": [
+        "No pleasure-seeking choices documented",
+        "Prioritized duty over personal comfort"
+      ]
+    },
+    "achievement": {
+      "score": 0.75,
+      "confidence": "medium",
+      "evidence": [
+        "Promotion for evidence-based work",
+        "Professional competence validation",
+        "Systemic advocacy efforts"
+      ]
+    },
+    "power": {
+      "score": 0.15,
+      "confidence": "medium",
+      "evidence": [
+        "Rejected institutional power plays",
+        "No status-seeking behaviors documented"
+      ]
+    },
+    "security": {
+      "score": 0.65,
+      "confidence": "medium",
+      "evidence": [
+        "Sought therapy for anxiety management",
+        "Some concern for employment security"
+      ]
+    },
+    "conformity": {
+      "score": 0.22,
+      "confidence": "high",
+      "evidence": [
+        "Refused to comply with falsification orders",
+        "Challenged institutional norms explicitly"
+      ]
+    },
+    "tradition": {
+      "score": 0.18,
+      "confidence": "low",
+      "evidence": [
+        "No respect for traditional hierarchy shown",
+        "Challenged established class systems"
+      ]
+    },
+    "benevolence": {
+      "score": 0.85,
+      "confidence": "high",
+      "evidence": [
+        "Equal value assertion for East End lives",
+        "Patient safety prioritization",
+        "Five lives lost reflection"
+      ]
+    },
+    "universalism": {
+      "score": 0.92,
+      "confidence": "high",
+      "evidence": [
+        "Social justice advocacy for poor populations",
+        "Systemic infrastructure change focus",
+        "Equal resource allocation advocacy"
+      ]
+    }
+  },
+  "jungian_archetypes": {
+    "dominant_archetypes": [
+      {
+        "archetype": "The Hero",
+        "strength": 0.88,
+        "confidence": "high",
+        "evidence": [
+          "Transformation through crisis trials",
+          "Willingness to sacrifice career for principles",
+          "Courage in confronting powerful adversaries"
+        ]
+      },
+      {
+        "archetype": "The Sage",
+        "strength": 0.82,
+        "confidence": "high",
+        "evidence": [
+          "Evidence-based medical diagnosis",
+          "Systematic pattern recognition",
+          "Wisdom through therapy and reflection"
+        ]
+      },
+      {
+        "archetype": "The Caregiver",
+        "strength": 0.78,
+        "confidence": "high",
+        "evidence": [
+          "Patient safety prioritization",
+          "Public health advocacy",
+          "Equal care for vulnerable populations"
+        ]
+      },
+      {
+        "archetype": "The Rebel",
+        "strength": 0.72,
+        "confidence": "medium",
+        "evidence": [
+          "Challenged class-based status quo",
+          "Refused institutional compliance demands",
+          "Disrupted traditional power structures"
+        ]
+      },
+      {
+        "archetype": "The Self",
+        "strength": 0.65,
+        "confidence": "medium",
+        "evidence": [
+          "Integration through therapy",
+          "Alignment of values and actions",
+          "Conscious self-development work"
+        ]
+      }
+    ],
+    "shadow_work": "Acknowledged and working with anxiety/vulnerability through therapy rather than repression",
+    "archetype_conflicts": [
+      "Hero's duty vs Caregiver's compassion (no conflict observed)",
+      "Rebel's disruption vs Sage's wisdom (integrated through evidence-based rebellion)"
+    ]
+  },
+  "defense_mechanisms": {
+    "primary": [
+      "sublimation",
+      "altruism",
+      "anticipation"
+    ],
+    "situations": [
+      "Anxiety channeled into systematic action",
+      "Professional advocacy for others' welfare",
+      "Preparation through therapy for confrontations"
+    ],
+    "effectiveness": "high"
+  },
+  "relationship_patterns": {
+    "power_preference": "equality with ethical authority",
+    "intimacy_comfort": "selective vulnerability with trusted colleagues",
+    "boundary_setting": "strong",
+    "conflict_style": "direct confrontation with evidence-based arguments"
+  },
+  "blind_spots": [
+    "May underestimate institutional retaliation risks",
+    "Could benefit from strategic diplomacy alongside direct confrontation",
+    "Potential burnout from sustained high-stakes advocacy"
+  ],
+  "contradictions": [
+    "High anxiety but courageous action",
+    "Rebels against authority while seeking institutional validation",
+    "Intellectual approach to emotional situations"
+  ],
+  "profile_summary": "An evidence-based medical professional who integrates systematic thinking with moral courage. High conscientiousness and moderate neuroticism channeled through effective regulation strategies. Values universal human dignity over institutional conformity, with secure attachment enabling principled resistance to authority.",
+  "_cost": 0.008762,
+  "_generation_id": "gen-1761268436-oraAxuEkFOGj5zPNZGzx"
+}

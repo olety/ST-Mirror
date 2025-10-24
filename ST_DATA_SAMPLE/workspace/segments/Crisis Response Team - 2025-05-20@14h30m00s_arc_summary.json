@@ -1,0 +1,33 @@
+{
+  "source_file": "ST_DATA/chats/Crisis Response Team/Crisis Response Team - 2025-05-20@14h30m00s.jsonl",
+  "total_messages": 568,
+  "num_arcs": 2,
+  "arcs": [
+    {
+      "arc_id": 1,
+      "arc_type": "casual_roleplay",
+      "start_message": 0,
+      "end_message": 200,
+      "message_count": 200,
+      "statistics": {
+        "ooc_ratio": 0.0,
+        "sexual_ratio": 0.21,
+        "personal_ratio": 0.185,
+        "emotional_ratio": 0.405
+      }
+    },
+    {
+      "arc_id": 2,
+      "arc_type": "casual_roleplay",
+      "start_message": 200,
+      "end_message": 568,
+      "message_count": 368,
+      "statistics": {
+        "ooc_ratio": 0.0,
+        "sexual_ratio": 0.16777777777777778,
+        "personal_ratio": 0.21333333333333332,
+        "emotional_ratio": 0.385
+      }
+    }
+  ]
+}

@@ -1,0 +1,20 @@
+{
+  "source_file": "ST_DATA/chats/Victorian Medical Mystery/Victorian Medical Mystery - 2025-04-18@11h00m00s.jsonl",
+  "total_messages": 141,
+  "num_arcs": 1,
+  "arcs": [
+    {
+      "arc_id": 1,
+      "arc_type": "mixed_intimate",
+      "start_message": 0,
+      "end_message": 141,
+      "message_count": 141,
+      "statistics": {
+        "ooc_ratio": 0.0,
+        "sexual_ratio": 0.3131707317073171,
+        "personal_ratio": 0.22715447154471546,
+        "emotional_ratio": 0.39739837398373984
+      }
+    }
+  ]
+}

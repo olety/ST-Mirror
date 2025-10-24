@@ -1,0 +1,20 @@
+{
+  "source_file": "ST_DATA/chats/Station Engineer/Station Engineer - 2025-03-12@09h00m00s.jsonl",
+  "total_messages": 177,
+  "num_arcs": 1,
+  "arcs": [
+    {
+      "arc_id": 1,
+      "arc_type": "romantic_connection",
+      "start_message": 0,
+      "end_message": 177,
+      "message_count": 177,
+      "statistics": {
+        "ooc_ratio": 0.0,
+        "sexual_ratio": 0.2112962962962963,
+        "personal_ratio": 0.2790740740740741,
+        "emotional_ratio": 0.4381481481481481
+      }
+    }
+  ]
+}

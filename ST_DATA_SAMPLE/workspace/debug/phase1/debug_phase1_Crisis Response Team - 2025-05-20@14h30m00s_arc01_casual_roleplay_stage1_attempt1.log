@@ -1,0 +1,139 @@
+=== Phase 1 Debug Log ===
+Stage: google/gemini-2.5-flash-lite-preview-09-2025 (medium reasoning)
+Attempt: 1/2
+Chunk ID: Crisis Response Team - 2025-05-20@14h30m00s_arc01_casual_roleplay
+Model: google/gemini-2.5-flash-lite-preview-09-2025
+
+=== API Response ===
+Generation ID: gen-1761268422-yiGumBJCbgX7M0ztc1jo
+Usage: {
+  "prompt_tokens": 17996,
+  "completion_tokens": 3652,
+  "total_tokens": 21648,
+  "cost": 0.0032604,
+  "is_byok": false,
+  "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "audio_tokens": 0
+  },
+  "cost_details": {
+    "upstream_inference_cost": null,
+    "upstream_inference_prompt_cost": 0.0017996,
+    "upstream_inference_completions_cost": 0.0014608
+  },
+  "completion_tokens_details": {
+    "reasoning_tokens": 2498,
+    "image_tokens": 0
+  }
+}
+
+=== Raw Output (length: 4980) ===
+{
+  "chunk_id": "crisis_response_001",
+  "chunk_summary": "User (Alex) takes command of a complex hybrid contamination crisis, demonstrating rapid growth, ethical leadership, and innovative protocol development while building a deep, mutual relationship with team member Kira Ashvein.",
+  "word_count": 1405,
+  "ic_ooc_ratio": 1.0,
+  "decisions": [
+    {
+      "choice": "Chose to proactively update mentor Elara as a colleague rather than seeking reassurance.",
+      "alternative": "Could have avoided contact or only reported status.",
+      "context": "Initial assignment briefing following Magistra Elara's recommendation."
+    },
+    {
+      "choice": "Accepted sensitive data from Voss regarding corporate negligence and committed to accurate documentation.",
+      "alternative": "Could have avoided confrontation with corporate politics.",
+      "context": "Voss provided evidence of negligence at Meridian Industrials."
+    },
+    {
+      "choice": "Chose to prioritize public safety over political pressure when allocating resources.",
+      "alternative": "Could have prioritized the wealthy Silvershore District due to funding offers.",
+      "context": "Council Leader Voss warned about political dimensions."
+    },
+    {
+      "choice": "Decided to lead senior mages by explicitly stating reliance on their expertise rather than asserting dominance.",
+      "alternative": "Could have micromanaged or deferred entirely.",
+      "context": "Addressing Kira Ashvein's skepticism regarding leadership hierarchy."
+    },
+    {
+      "choice": "Authorized a high-risk, high-reward synchronized operation (Extraction + Transmutation) to save time.",
+      "alternative": "Could have chosen the safer, slower staged extraction method.",
+      "context": "Addressing structural compromise in a contaminated building."
+    },
+    {
+      "choice": "Accepted the challenge of co-presenting revolutionary findings at a conference despite anxiety.",
+      "alternative": "Could have deferred the presentation to Kira due to public speaking fear.",
+      "context": "After developing the modular remediation framework."
+    }
+  ],
+  "emotional_moments": [
+    {
+      "emotion": "vulnerability",
+      "intensity": "medium",
+      "trigger": "Acknowledging capability without usual self-doubt in message to mentor."
+    },
+    {
+      "emotion": "anxiety",
+      "intensity": "low",
+      "trigger": "Pre-performance jitters before initiating extraction spell."
+    },
+    {
+      "emotion": "determination",
+      "intensity": "high",
+      "trigger": "Committing to ethical documentation despite political pressure."
+    },
+    {
+      "emotion": "joy",
+      "intensity": "high",
+      "trigger": "Success of the first remediation protocol execution."
+    },
+    {
+      "emotion": "affection",
+      "intensity": "high",
+      "trigger": "Mutual affirmation of acceptance with Kira regarding personal flaws."
+    }
+  ],
+  "behavioral_patterns": [
+    "Consistent use of structured preparation rituals (breathing, equipment checks, reviewing principles) to manage performance anxiety and achieve focus.",
+    "Strong adherence to internalized ethical standards, consistently prioritizing human welfare and accurate reporting over political expediency or corporate interests.",
+    "Adaptive leadership style characterized by trusting specialized expertise, delegating based on capability, and focusing on clear communication of shared goals."
+  ],
+  "relationship_dynamics": {
+    "power_balance": "equal",
+    "intimacy_level": "intimate",
+    "conflict_present": false,
+    "boundary_setting": true
+  },
+  "key_quotes": [
+    "I think I'm actually ready. Not perfectly, but genuinely.",
+    "If there was negligence, that needs to be part of the record. Public safety matters more than corporate reputation.",
+    "Clear communication keeps people a live.",
+    "I trust you completely [Finn].",
+    "I'm choosing you. Exactly as you are. Prickly, sarcastic, brilliant, passionate, complex you."
+  ],
+  "context_flags": {
+    "has_vulnerability": true,
+    "has_conflict": false,
+    "has_intimacy": true,
+    "has_humor": true,
+    "has_creativity": true,
+    "has_boundary_setting": true,
+    "has_emotional_support": true
+  },
+  "if_then_observations": [
+    {
+      "if_situation": "Encountering complex, novel contamination (hybrid feedback loop)",
+      "then_response": "User immediately synthesizes implications and pivots to developing revolutionary, systematic remediation methodology."
+    },
+    {
+      "if_situation": "Receives internal/external validation of growth (from Elara, Finn, Lyra)",
+      "then_response": "User expresses gratitude and integrates the feedback into self-concept, reinforcing self-trust."
+    },
+    {
+      "if_situation": "Team member expresses uncertainty or anxiety (Finn)",
+      "then_response": "User provides mentorship by reframing the issue as value-aligned judgment calls rather than a search for perfection."
+    }
+  ]
+}
+
+=== Normalization ===
+✓ Strategy 1 (json-repair) succeeded

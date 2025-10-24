@@ -1,0 +1,391 @@
+{
+  "thinking": "Analyzing 5 decisions across 1 chunk - low data volume so confidence will be calibrated accordingly. Key patterns emerging: 1) Consistent ethical reasoning and empathy (3/5 decisions involve compassion/ethical consideration), 2) Intellectual curiosity and self-awareness (vulnerability about competence, seeking understanding), 3) Methodical approach to learning (note-taking, structured practice), 4) Low conflict avoidance - engages with difficult situations rather than withdrawing. Emotional range appears moderate with anxiety, excitement, affection, sadness all present. Relationship dynamics show close mentor-student bond with healthy boundaries. The 'if-then' patterns reveal systematic ethical processing and safety-conscious behavior. Quotes emphasize wisdom-seeking, self-criticism, and wonder at magical experiences. This suggests high Openness (intellectual + experiential), moderate Conscientiousness (diligence but not rigid), low Extraversion (more reflective than assertive), high Agreeableness (compassion > politeness), and moderate Neuroticism (anxiety present but managed). Attachment appears secure with some anxious elements. Values prioritize benevolence and self-direction over power/achievement.",
+  "profile_id": "Fantasy___Apprenticeship_______2025_01_15@10h00m00s_20251024_101418",
+  "data_summary": {
+    "total_chunks": 1,
+    "total_decisions": 5,
+    "total_emotional_moments": 5,
+    "ic_ooc_ratio": 1.0
+  },
+  "big_five": {
+    "openness": {
+      "score": 0.85,
+      "confidence": "medium",
+      "evidence": [
+        "Seeking understanding of unexplained phenomena",
+        "Immediate reporting of novel sensory experience",
+        "Intellectual curiosity about magical theory"
+      ],
+      "aspects": {
+        "intellect": {
+          "score": 0.9,
+          "confidence": "medium",
+          "evidence": [
+            "Philosophical approach to magic ('I seek understanding')",
+            "Analytical questioning of ethical procedures",
+            "Self-reflective about learning process"
+          ]
+        },
+        "openness_to_experience": {
+          "score": 0.8,
+          "confidence": "medium",
+          "evidence": [
+            "Embraced vulnerability with mentor",
+            "Willingness to experience truth-reading",
+            "Excitement about magical sensations"
+          ]
+        }
+      }
+    },
+    "conscientiousness": {
+      "score": 0.7,
+      "confidence": "medium",
+      "evidence": [
+        "Methodical note-taking and practice",
+        "Seeks master intervention when exceeds skill",
+        "Commits to safety protocols"
+      ],
+      "aspects": {
+        "industriousness": {
+          "score": 0.75,
+          "confidence": "medium",
+          "evidence": [
+            "Diligent practice of techniques",
+            "Structured approach to fieldwork",
+            "Self-criticism for not mastering quickly"
+          ]
+        },
+        "orderliness": {
+          "score": 0.65,
+          "confidence": "medium",
+          "evidence": [
+            "Follows protocols when appropriate",
+            "Seeks structured learning",
+            "Note-taking habits"
+          ]
+        }
+      }
+    },
+    "extraversion": {
+      "score": 0.35,
+      "confidence": "medium",
+      "evidence": [
+        "More reflective than assertive",
+        "Engages when necessary but not dominant",
+        "Energy directed inward rather than outward"
+      ],
+      "aspects": {
+        "enthusiasm": {
+          "score": 0.4,
+          "confidence": "medium",
+          "evidence": [
+            "Shows excitement about magic",
+            "Warm response to praise",
+            "Affection for mentor"
+          ]
+        },
+        "assertiveness": {
+          "score": 0.3,
+          "confidence": "medium",
+          "evidence": [
+            "Advocates compassionately but not forcefully",
+            "Lets mentor lead",
+            "Questions rather than demands"
+          ]
+        }
+      }
+    },
+    "agreeableness": {
+      "score": 0.85,
+      "confidence": "medium",
+      "evidence": [
+        "Deep empathy for Magistra's loss",
+        "Advocates for compassionate alternatives",
+        "Prioritizes others' wellbeing"
+      ],
+      "aspects": {
+        "compassion": {
+          "score": 0.95,
+          "confidence": "high",
+          "evidence": [
+            "Immediate empathy for thief's desperation",
+            "Emotional response to Magistra's trauma",
+            "Proposes helping rather than punishing"
+          ]
+        },
+        "politeness": {
+          "score": 0.75,
+          "confidence": "medium",
+          "evidence": [
+            "Respects Council authority while disagreeing",
+            "Deferential to mentor",
+            "Avoids confrontational language"
+          ]
+        }
+      }
+    },
+    "neuroticism": {
+      "score": 0.6,
+      "confidence": "medium",
+      "evidence": [
+        "Anxiety about competence",
+        "Self-criticism for learning speed",
+        "Vulnerability about limitations"
+      ],
+      "aspects": {
+        "volatility": {
+          "score": 0.4,
+          "confidence": "medium",
+          "evidence": [
+            "Stable emotional responses",
+            "No anger or irritability observed",
+            "Calm under pressure"
+          ]
+        },
+        "withdrawal": {
+          "score": 0.8,
+          "confidence": "medium",
+          "evidence": [
+            "Anxiety about being good enough",
+            "Self-conscious about limitations",
+            "Worry about safety and competence"
+          ]
+        }
+      }
+    }
+  },
+  "attachment": {
+    "primary_style": "secure",
+    "anxiety_dimension": 0.35,
+    "avoidance_dimension": 0.2,
+    "evidence": [
+      "Seeks closeness with mentor without clinginess",
+      "Healthy boundary recognition",
+      "Comfortable with vulnerability",
+      "No abandonment fears observed"
+    ]
+  },
+  "behavioral_patterns": [
+    {
+      "if_situation": "When recognizing skill limitations",
+      "then_response": "Seeks appropriate master guidance while maintaining patient safety",
+      "frequency": 1,
+      "confidence": "medium"
+    },
+    {
+      "if_situation": "When encountering ethical ambiguity",
+      "then_response": "Gathers context and proposes least harmful solution",
+      "frequency": 1,
+      "confidence": "medium"
+    },
+    {
+      "if_situation": "When receiving mentorship validation",
+      "then_response": "Deepens commitment to wisdom-focused path",
+      "frequency": 1,
+      "confidence": "medium"
+    }
+  ],
+  "emotional_profile": {
+    "dominant_emotions": [
+      "anxiety",
+      "affection",
+      "excitement",
+      "sadness"
+    ],
+    "emotional_range": "moderate",
+    "regulation_strategies": [
+      "intellectualization",
+      "seeking mentorship",
+      "ethical reframing"
+    ],
+    "common_triggers": [
+      "competence challenges",
+      "others' suffering",
+      "magical discovery"
+    ]
+  },
+  "schwartz_values": {
+    "self_direction": {
+      "score": 0.85,
+      "confidence": "medium",
+      "evidence": [
+        "Seeks understanding of unexplained phenomena",
+        "Independent ethical reasoning",
+        "Questions authority procedures"
+      ]
+    },
+    "stimulation": {
+      "score": 0.6,
+      "confidence": "medium",
+      "evidence": [
+        "Excitement about magical experiences",
+        "Curiosity about truth-reading",
+        "Novelty-seeking in learning"
+      ]
+    },
+    "hedonism": {
+      "score": 0.3,
+      "confidence": "low",
+      "evidence": [
+        "No pleasure-seeking behaviors observed",
+        "Prioritizes ethics over enjoyment",
+        "Focus on responsibility"
+      ]
+    },
+    "achievement": {
+      "score": 0.65,
+      "confidence": "medium",
+      "evidence": [
+        "Desire to master magic",
+        "Self-criticism for slow progress",
+        "Pride in successful channeling"
+      ]
+    },
+    "power": {
+      "score": 0.2,
+      "confidence": "medium",
+      "evidence": [
+        "No status-seeking behaviors",
+        "Defers to authority",
+        "Empowers others rather than dominating"
+      ]
+    },
+    "security": {
+      "score": 0.7,
+      "confidence": "medium",
+      "evidence": [
+        "Commits to safety protocols",
+        "Seeks stable mentorship",
+        "Concern about magical risks"
+      ]
+    },
+    "conformity": {
+      "score": 0.5,
+      "confidence": "medium",
+      "evidence": [
+        "Follows protocols but questions them",
+        "Respects tradition while seeking reform",
+        "Balanced approach"
+      ]
+    },
+    "tradition": {
+      "score": 0.4,
+      "confidence": "medium",
+      "evidence": [
+        "Respects magical tradition",
+        "Willing to challenge outdated practices",
+        "Values wisdom of elders"
+      ]
+    },
+    "benevolence": {
+      "score": 0.9,
+      "confidence": "high",
+      "evidence": [
+        "Advocates for desperate thief",
+        "Deep empathy for mentor's loss",
+        "Prioritizes compassion in decisions"
+      ]
+    },
+    "universalism": {
+      "score": 0.75,
+      "confidence": "medium",
+      "evidence": [
+        "Concern for thief's wellbeing",
+        "Seeks understanding of all phenomena",
+        "Tolerance for different approaches"
+      ]
+    }
+  },
+  "jungian_archetypes": {
+    "dominant_archetypes": [
+      {
+        "archetype": "The Caregiver",
+        "strength": 0.85,
+        "confidence": "high",
+        "evidence": [
+          "Advocates for thief's wellbeing",
+          "Emotional support for grieving mentor",
+          "Prioritizes others' safety"
+        ]
+      },
+      {
+        "archetype": "The Sage",
+        "strength": 0.8,
+        "confidence": "medium",
+        "evidence": [
+          "Seeks understanding and wisdom",
+          "Questions ethical implications",
+          "Values knowledge over power"
+        ]
+      },
+      {
+        "archetype": "The Innocent",
+        "strength": 0.65,
+        "confidence": "medium",
+        "evidence": [
+          "Wonder at magical experiences",
+          "Trust in mentorship",
+          "Optimistic about learning"
+        ]
+      },
+      {
+        "archetype": "The Self",
+        "strength": 0.6,
+        "confidence": "medium",
+        "evidence": [
+          "Integration of vulnerability and strength",
+          "Balanced approach to ethics",
+          "Authentic self-expression"
+        ]
+      },
+      {
+        "archetype": "The Persona",
+        "strength": 0.3,
+        "confidence": "low",
+        "evidence": [
+          "Minimal social masking",
+          "Authentic with mentor",
+          "No apparent facade"
+        ]
+      }
+    ],
+    "shadow_work": "Low shadow expression observed - may need to integrate assertiveness and self-interest",
+    "archetype_conflicts": [
+      "Caregiver vs need for self-assertion",
+      "Sage vs emotional vulnerability"
+    ]
+  },
+  "defense_mechanisms": {
+    "primary": [
+      "intellectualization",
+      "altruism",
+      "sublimation"
+    ],
+    "situations": [
+      "When anxious about competence - intellectualizes learning process",
+      "When facing ethical dilemmas - uses altruistic reasoning",
+      "When overwhelmed - channels into helping others"
+    ],
+    "effectiveness": "high"
+  },
+  "relationship_patterns": {
+    "power_preference": "collaborative",
+    "intimacy_comfort": "high",
+    "boundary_setting": "strong",
+    "conflict_style": "diplomatic"
+  },
+  "blind_spots": [
+    "May over-identify with helper role",
+    "Could neglect own needs in service to others",
+    "Might intellectualize emotions rather than feeling them",
+    "Potential to enable others' dependence"
+  ],
+  "contradictions": [
+    "High compassion but moderate self-compassion",
+    "Seeks understanding but judges self harshly",
+    "Values wisdom but doubts own competence"
+  ],
+  "profile_summary": "A thoughtful, ethically-driven apprentice who prioritizes compassion and understanding. Shows high intellectual curiosity balanced with emotional sensitivity. Tends toward self-criticism while extending grace to others. Learning style combines methodical practice with philosophical reflection. Relationship approach emphasizes mentorship and mutual growth over dominance or independence.",
+  "_cost": 0.0064199,
+  "_generation_id": "gen-1761268439-l2LXCL4D76dhxWjWj4yF"
+}

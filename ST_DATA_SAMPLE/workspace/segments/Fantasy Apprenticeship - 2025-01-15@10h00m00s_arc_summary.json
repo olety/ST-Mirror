@@ -1,0 +1,20 @@
+{
+  "source_file": "ST_DATA/chats/Fantasy Apprenticeship/Fantasy Apprenticeship - 2025-01-15@10h00m00s.jsonl",
+  "total_messages": 218,
+  "num_arcs": 1,
+  "arcs": [
+    {
+      "arc_id": 1,
+      "arc_type": "mixed_intimate",
+      "start_message": 0,
+      "end_message": 218,
+      "message_count": 218,
+      "statistics": {
+        "ooc_ratio": 0.0,
+        "sexual_ratio": 0.20933333333333332,
+        "personal_ratio": 0.20755555555555558,
+        "emotional_ratio": 0.44266666666666665
+      }
+    }
+  ]
+}

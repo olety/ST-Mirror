@@ -1,0 +1,134 @@
+=== Phase 1 Debug Log ===
+Stage: google/gemini-2.5-flash-lite-preview-09-2025 (medium reasoning)
+Attempt: 1/2
+Chunk ID: Victorian Medical Mystery - 2025-04-18@11h00m00s_arc01_mixed_intimate
+Model: google/gemini-2.5-flash-lite-preview-09-2025
+
+=== API Response ===
+Generation ID: gen-1761268422-ZxCBTG0Bb1yoFsCQFRWy
+Usage: {
+  "prompt_tokens": 17386,
+  "completion_tokens": 2729,
+  "total_tokens": 20115,
+  "cost": 0.0028302,
+  "is_byok": false,
+  "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "audio_tokens": 0
+  },
+  "cost_details": {
+    "upstream_inference_cost": null,
+    "upstream_inference_prompt_cost": 0.0017386,
+    "upstream_inference_completions_cost": 0.0010916
+  },
+  "completion_tokens_details": {
+    "reasoning_tokens": 1542,
+    "image_tokens": 0
+  }
+}
+
+=== Raw Output (length: 5195) ===
+{
+  "chunk_id": "broad_street_outbreak_001",
+  "chunk_summary": "User successfully identifies, diagnoses, and stops a cholera outbreak by prioritizing empirical evidence over institutional authority, confronting class bias, and demonstrating significant personal growth in managing anxiety.",
+  "word_count": 1558,
+  "ic_ooc_ratio": 1.0,
+  "decisions": [
+    {
+      "choice": "Diagnosed cholera immediately based on clinical and epidemiological evidence, overriding senior physician's order to document gastroenteritis.",
+      "alternative": "Could have complied with Dr. Blackwood's order to avoid immediate conflict and protect career.",
+      "context": "The initial presentation of six patients suggested a textbook cholera outbreak centered on the Broad Street pump."
+    },
+    {
+      "choice": "Refused to falsify medical records, stating, 'I won't falsify medical documentation,' even when threatened with dismissal by Dr. Blackwood.",
+      "alternative": "Could have rationalized documenting gastroenteritis as a temporary measure to maintain employment.",
+      "context": "Confrontation with Dr. Blackwood regarding the official diagnosis."
+    },
+    {
+      "choice": "Directly challenged Board Chairman Pemberton on class-based prejudice, asserting equal value for East End lives over reputation/economic disruption.",
+      "alternative": "Could have used diplomatic language to appeal to the Board's sense of duty without explicitly naming class bias.",
+      "context": "Pemberton questioned the economic disruption caused by closing the pump."
+    },
+    {
+      "choice": "Chose to seek therapy six months prior to manage anxiety, enabling functional courage during high-stakes confrontations.",
+      "alternative": "Could have continued operating under high anxiety, leading to compliance or avoidance during critical moments.",
+      "context": "Reflecting on the internal transformation that allowed principled action."
+    },
+    {
+      "choice": "Advocated for systemic change, focusing on infrastructure and policy advocacy beyond treating individual patients post-outbreak.",
+      "alternative": "Could have accepted the successful containment as the end of the professional responsibility.",
+      "context": "Reflecting on the need to address the structural causes of the outbreak."
+    }
+  ],
+  "emotional_moments": [
+    {
+      "emotion": "vulnerability",
+      "intensity": "medium",
+      "trigger": "Admitting fear of unemployment to Dr. Fletcher."
+    },
+    {
+      "emotion": "anxiety",
+      "intensity": "high",
+      "trigger": "Direct contradiction and threat of dismissal from Dr. Blackwood."
+    },
+    {
+      "emotion": "anger",
+      "intensity": "medium",
+      "trigger": "Witnessing class-based devaluation of poor lives by Sir Charles Pemberton."
+    },
+    {
+      "emotion": "joy",
+      "intensity": "medium",
+      "trigger": "Receiving promotion and institutional validation for evidence-based work."
+    },
+    {
+      "emotion": "sadness",
+      "intensity": "medium",
+      "trigger": "Reflecting on the five lives lost due to delayed intervention."
+    }
+  ],
+  "behavioral_patterns": [
+    "Prioritizing empirical medical evidence and diagnostic accuracy over institutional hierarchy and political pressure.",
+    "Engaging in structured self-regulation (breathing, journaling) immediately following high-stress confrontations to maintain functional clarity.",
+    "Explicitly naming and challenging structural inequities (class bias, resource allocation) when they impede public health action."
+  ],
+  "relationship_dynamics": {
+    "power_balance": "shifting",
+    "intimacy_level": "close",
+    "conflict_present": true,
+    "boundary_setting": true
+  },
+  "key_quotes": [
+    "I can't unknow that this is cholera. I can't unknow that the Broad Street pump is contaminated.",
+    "If the choice is between my career and accurately documenting a disease outbreak that could kill hundreds of people? Yes. I'm willing to accept that consequence.",
+    "Your lives have the same value as any child in Kensington or Mayfair.",
+    "Learning to function effectively despite discomfort. That is the skill I have been developing over six months of therapy and conscious practice.",
+    "I'm not apologizing for prioritizing patient safety and public health."
+  ],
+  "context_flags": {
+    "has_vulnerability": true,
+    "has_conflict": true,
+    "has_intimacy": true,
+    "has_humor": false,
+    "has_creativity": false,
+    "has_boundary_setting": true,
+    "has_emotional_support": true
+  },
+  "if_then_observations": [
+    {
+      "if_situation": "Authority demands falsification of medical records",
+      "then_response": "User refuses and accepts potential career consequences."
+    },
+    {
+      "if_situation": "Acute anxiety spikes during confrontation",
+      "then_response": "User employs cognitive restructuring (journaling, breathing) to regulate physiology and maintain principled action."
+    },
+    {
+      "if_situation": "Class-based devaluation of vulnerable populations is evident",
+      "then_response": "User explicitly names the structural injustice and advocates for equal resource allocation."
+    }
+  ]
+}
+
+=== Normalization ===
+✓ Strategy 1 (json-repair) succeeded

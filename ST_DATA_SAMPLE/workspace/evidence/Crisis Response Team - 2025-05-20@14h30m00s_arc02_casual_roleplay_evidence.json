@@ -1,0 +1,90 @@
+{
+  "chunk_id": "Crisis Response Team - 2025-05-20@14h30m00s_arc02_casual_roleplay",
+  "chunk_summary": "User led a complex crisis response, developing innovative protocols, navigating ethical conflicts with political figures, and achieving significant personal and romantic growth.",
+  "word_count": 1403,
+  "ic_ooc_ratio": 0.98,
+  "decisions": [
+    {
+      "choice": "Developed a modular, component-based remediation protocol based on pharmaceutical analogy.",
+      "alternative": "Could have attempted a single, brute-force remediation protocol.",
+      "context": "Responding to evolving, multi-faceted contamination signatures."
+    },
+    {
+      "choice": "Prioritized sending 15 critical patients to specialized external care despite resource strain.",
+      "alternative": "Could have kept patients locally to maintain full remediation team strength.",
+      "context": "Weighing human life against operational efficiency."
+    },
+    {
+      "choice": "Stood firm against Council Member Silvershore's political demands regarding triage prioritization.",
+      "alternative": "Could have compromised triage order to appease political pressure."
+    },
+    {
+      "choice": "Trusted trained intuition to break harmonic resonance during extreme underground contamination spike.",
+      "alternative": "Could have frozen or attempted a complex calculation under lethal pressure."
+    }
+  ],
+  "emotional_moments": [
+    {
+      "emotion": "anxiety",
+      "intensity": "medium",
+      "trigger": "Encountering complex, evolving contamination data."
+    },
+    {
+      "emotion": "vulnerability",
+      "intensity": "high",
+      "trigger": "Detailed journaling about personal growth and romantic readiness."
+    },
+    {
+      "emotion": "determination",
+      "intensity": "high",
+      "trigger": "Confronting political interference regarding ethical triage decisions."
+    },
+    {
+      "emotion": "joy",
+      "intensity": "medium",
+      "trigger": "Successful collaboration and progression of relationship with Kira."
+    }
+  ],
+  "behavioral_patterns": [
+    "Engages in structured, detailed self-reflection (journaling) to consciously integrate personal growth and learning.",
+    "Demonstrates strong emotional regulation by acknowledging fear but immediately channeling focus toward actionable steps.",
+    "Actively seeks and accepts constructive criticism, viewing it as essential for effective leadership and collaboration."
+  ],
+  "relationship_dynamics": {
+    "power_balance": "shifting",
+    "intimacy_level": "intimate",
+    "conflict_present": true,
+    "boundary_setting": true
+  },
+  "key_quotes": [
+    "I can lead. I can make hard decisions. I can collaborate.",
+    "I was hired to remediate contamination and protect public health, not to optimize economic outcomes. Full stop.",
+    "Confidence isn't fearlessness. It's self-trust.",
+    "Honest disagreement is better than polite failure."
+  ],
+  "context_flags": {
+    "has_vulnerability": true,
+    "has_conflict": true,
+    "has_intimacy": true,
+    "has_humor": false,
+    "has_creativity": true,
+    "has_boundary_setting": true,
+    "has_emotional_support": true
+  },
+  "if_then_observations": [
+    {
+      "if_situation": "If contamination composition varies widely",
+      "then_response": "User develops adaptive, modular remediation protocols."
+    },
+    {
+      "if_situation": "If political demands conflict with established ethical triage",
+      "then_response": "User firmly upholds ethical priority based on human health."
+    },
+    {
+      "if_situation": "When fear arises during extreme danger",
+      "then_response": "User acknowledges fear but relies on trained intuition to act effectively."
+    }
+  ],
+  "_cost": 0.0039367,
+  "_generation_id": "gen-1761268441-mxr8gVytCrPqjA5OxXi8"
+}
