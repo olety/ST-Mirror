@@ -1,5 +1,5 @@
 # ST-Mirror
-ST-Mirror analyzes your SillyTavern chat logs to build psychological profiles from your roleplay choices.
+ST-Mirror analyzes your [SillyTavern](https://github.com/SillyTavern/SillyTavern) chat logs to build psychological profiles from your roleplay choices.
 
 Every RP decision reveals patterns: how you handle conflict, what you value, how you form attachments, whether you withdraw or pursue when vulnerable. This system treats those as behavioral evidence and aggregates them across hundreds of sessions into longitudinal profiles using Big Five personality, attachment theory, Schwartz values, and Jungian archetypes.
 
