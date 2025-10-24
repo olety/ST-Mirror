@@ -91,7 +91,7 @@ user:
     pronouns: "he/him" # Options: "he/him", "she/her", "they/them"
 ```
 
-You can also tune other parameters in `config.yaml` as needed (model selection, processing settings, timeouts, etc.).
+You can also tune other parameters in `config.yaml` as needed (model selection, processing settings, timeouts, etc.).<br/>
 **Note**: By default, chats with fewer than 100 messages are filtered out. You can adjust this in `config.yaml` under `processing.classifier.min_messages`.
 
 ### 3. Prepare Data
