@@ -1,0 +1,553 @@
+{
+  "type": "object",
+  "properties": {
+    "thinking": {
+      "type": "string",
+      "description": "Step-by-step reasoning about this period's patterns, trait averages, evolution, confidence levels"
+    },
+    "period": {
+      "type": "string",
+      "description": "Period identifier (e.g., '2025-W32', '2025-08', '2025')"
+    },
+    "level": {
+      "type": "string",
+      "enum": ["week", "month", "year"],
+      "description": "Time level of this aggregation"
+    },
+    "date_range": {
+      "type": "object",
+      "properties": {
+        "start": {"type": "string", "description": "ISO date string (YYYY-MM-DD)"},
+        "end": {"type": "string", "description": "ISO date string (YYYY-MM-DD)"}
+      },
+      "required": ["start", "end"]
+    },
+    "current_state": {
+      "type": "object",
+      "description": "Period-average psychological state (simple averages, not recency-weighted)",
+      "properties": {
+        "big5": {
+          "type": "object",
+          "description": "Big Five personality traits averaged across this period",
+          "properties": {
+            "openness": {
+              "type": "object",
+              "description": "Creativity, curiosity, openness to experience",
+              "properties": {
+                "score": {"type": "number", "minimum": 0, "maximum": 1, "description": "Average openness score for this period"},
+                "confidence": {"type": "string", "enum": ["low", "medium", "high"], "description": "Confidence level (scales with number of data points)"},
+                "evidence": {"type": "array", "items": {"type": "string"}, "description": "Specific quotes or patterns from this period"},
+                "aspects": {
+                  "type": "object",
+                  "description": "Openness sub-facets averaged across this period",
+                  "properties": {
+                    "intellect": {
+                      "type": "object",
+                      "description": "Abstract reasoning, philosophical curiosity, intellectual exploration",
+                      "properties": {
+                        "score": {"type": "number", "minimum": 0, "maximum": 1},
+                        "confidence": {"type": "string", "enum": ["low", "medium", "high"]},
+                        "evidence": {"type": "array", "items": {"type": "string"}}
+                      },
+                      "required": ["score", "confidence", "evidence"]
+                    },
+                    "openness_to_experience": {
+                      "type": "object",
+                      "description": "Aesthetic appreciation, imagination, emotional/sensory openness",
+                      "properties": {
+                        "score": {"type": "number", "minimum": 0, "maximum": 1},
+                        "confidence": {"type": "string", "enum": ["low", "medium", "high"]},
+                        "evidence": {"type": "array", "items": {"type": "string"}}
+                      },
+                      "required": ["score", "confidence", "evidence"]
+                    }
+                  },
+                  "required": ["intellect", "openness_to_experience"]
+                }
+              },
+              "required": ["score", "confidence", "evidence", "aspects"]
+            },
+            "conscientiousness": {
+              "type": "object",
+              "description": "Organization, dependability, self-discipline",
+              "properties": {
+                "score": {"type": "number", "minimum": 0, "maximum": 1, "description": "Average conscientiousness score for this period"},
+                "confidence": {"type": "string", "enum": ["low", "medium", "high"], "description": "Confidence level (scales with number of data points)"},
+                "evidence": {"type": "array", "items": {"type": "string"}, "description": "Specific quotes or patterns from this period"},
+                "aspects": {
+                  "type": "object",
+                  "description": "Conscientiousness sub-facets averaged across this period",
+                  "properties": {
+                    "industriousness": {
+                      "type": "object",
+                      "description": "Hard work, achievement striving, productivity, persistence",
+                      "properties": {
+                        "score": {"type": "number", "minimum": 0, "maximum": 1},
+                        "confidence": {"type": "string", "enum": ["low", "medium", "high"]},
+                        "evidence": {"type": "array", "items": {"type": "string"}}
+                      },
+                      "required": ["score", "confidence", "evidence"]
+                    },
+                    "orderliness": {
+                      "type": "object",
+                      "description": "Organization, tidiness, structure, planning, attention to detail",
+                      "properties": {
+                        "score": {"type": "number", "minimum": 0, "maximum": 1},
+                        "confidence": {"type": "string", "enum": ["low", "medium", "high"]},
+                        "evidence": {"type": "array", "items": {"type": "string"}}
+                      },
+                      "required": ["score", "confidence", "evidence"]
+                    }
+                  },
+                  "required": ["industriousness", "orderliness"]
+                }
+              },
+              "required": ["score", "confidence", "evidence", "aspects"]
+            },
+            "extraversion": {
+              "type": "object",
+              "description": "Sociability, assertiveness, emotional expression",
+              "properties": {
+                "score": {"type": "number", "minimum": 0, "maximum": 1, "description": "Average extraversion score for this period"},
+                "confidence": {"type": "string", "enum": ["low", "medium", "high"], "description": "Confidence level (scales with number of data points)"},
+                "evidence": {"type": "array", "items": {"type": "string"}, "description": "Specific quotes or patterns from this period"},
+                "aspects": {
+                  "type": "object",
+                  "description": "Extraversion sub-facets averaged across this period",
+                  "properties": {
+                    "enthusiasm": {
+                      "type": "object",
+                      "description": "Positive emotion, warmth, energy, sociability, friendliness",
+                      "properties": {
+                        "score": {"type": "number", "minimum": 0, "maximum": 1},
+                        "confidence": {"type": "string", "enum": ["low", "medium", "high"]},
+                        "evidence": {"type": "array", "items": {"type": "string"}}
+                      },
+                      "required": ["score", "confidence", "evidence"]
+                    },
+                    "assertiveness": {
+                      "type": "object",
+                      "description": "Dominance, leadership, boldness in social settings, taking charge",
+                      "properties": {
+                        "score": {"type": "number", "minimum": 0, "maximum": 1},
+                        "confidence": {"type": "string", "enum": ["low", "medium", "high"]},
+                        "evidence": {"type": "array", "items": {"type": "string"}}
+                      },
+                      "required": ["score", "confidence", "evidence"]
+                    }
+                  },
+                  "required": ["enthusiasm", "assertiveness"]
+                }
+              },
+              "required": ["score", "confidence", "evidence", "aspects"]
+            },
+            "agreeableness": {
+              "type": "object",
+              "description": "Cooperation, trust, empathy",
+              "properties": {
+                "score": {"type": "number", "minimum": 0, "maximum": 1, "description": "Average agreeableness score for this period"},
+                "confidence": {"type": "string", "enum": ["low", "medium", "high"], "description": "Confidence level (scales with number of data points)"},
+                "evidence": {"type": "array", "items": {"type": "string"}, "description": "Specific quotes or patterns from this period"},
+                "aspects": {
+                  "type": "object",
+                  "description": "Agreeableness sub-facets averaged across this period",
+                  "properties": {
+                    "compassion": {
+                      "type": "object",
+                      "description": "Empathy, warmth, caring for others' wellbeing, sympathy",
+                      "properties": {
+                        "score": {"type": "number", "minimum": 0, "maximum": 1},
+                        "confidence": {"type": "string", "enum": ["low", "medium", "high"]},
+                        "evidence": {"type": "array", "items": {"type": "string"}}
+                      },
+                      "required": ["score", "confidence", "evidence"]
+                    },
+                    "politeness": {
+                      "type": "object",
+                      "description": "Respect for social norms, deference, avoiding conflict, cooperation",
+                      "properties": {
+                        "score": {"type": "number", "minimum": 0, "maximum": 1},
+                        "confidence": {"type": "string", "enum": ["low", "medium", "high"]},
+                        "evidence": {"type": "array", "items": {"type": "string"}}
+                      },
+                      "required": ["score", "confidence", "evidence"]
+                    }
+                  },
+                  "required": ["compassion", "politeness"]
+                }
+              },
+              "required": ["score", "confidence", "evidence", "aspects"]
+            },
+            "neuroticism": {
+              "type": "object",
+              "description": "Emotional instability, anxiety, moodiness",
+              "properties": {
+                "score": {"type": "number", "minimum": 0, "maximum": 1, "description": "Average neuroticism score for this period"},
+                "confidence": {"type": "string", "enum": ["low", "medium", "high"], "description": "Confidence level (scales with number of data points)"},
+                "evidence": {"type": "array", "items": {"type": "string"}, "description": "Specific quotes or patterns from this period"},
+                "aspects": {
+                  "type": "object",
+                  "description": "Neuroticism sub-facets averaged across this period",
+                  "properties": {
+                    "volatility": {
+                      "type": "object",
+                      "description": "Anger, irritability, mood swings, emotional instability, reactivity",
+                      "properties": {
+                        "score": {"type": "number", "minimum": 0, "maximum": 1},
+                        "confidence": {"type": "string", "enum": ["low", "medium", "high"]},
+                        "evidence": {"type": "array", "items": {"type": "string"}}
+                      },
+                      "required": ["score", "confidence", "evidence"]
+                    },
+                    "withdrawal": {
+                      "type": "object",
+                      "description": "Anxiety, depression, self-consciousness, vulnerability to stress",
+                      "properties": {
+                        "score": {"type": "number", "minimum": 0, "maximum": 1},
+                        "confidence": {"type": "string", "enum": ["low", "medium", "high"]},
+                        "evidence": {"type": "array", "items": {"type": "string"}}
+                      },
+                      "required": ["score", "confidence", "evidence"]
+                    }
+                  },
+                  "required": ["volatility", "withdrawal"]
+                }
+              },
+              "required": ["score", "confidence", "evidence", "aspects"]
+            }
+          },
+          "required": ["openness", "conscientiousness", "extraversion", "agreeableness", "neuroticism"]
+        },
+        "attachment": {
+          "type": "object",
+          "description": "Attachment style based on anxiety and avoidance dimensions",
+          "properties": {
+            "primary_style": {"type": "string", "enum": ["secure", "anxious", "avoidant", "disorganized"], "description": "Primary attachment style for this period"},
+            "anxiety_dimension": {"type": "number", "minimum": 0, "maximum": 1, "description": "Fear of abandonment (0=low, 1=high)"},
+            "avoidance_dimension": {"type": "number", "minimum": 0, "maximum": 1, "description": "Discomfort with intimacy (0=low, 1=high)"},
+            "evidence": {"type": "array", "items": {"type": "string"}, "description": "Attachment activation patterns from this period"}
+          },
+          "required": ["primary_style", "anxiety_dimension", "avoidance_dimension", "evidence"]
+        },
+        "schwartz_values": {
+          "type": "object",
+          "description": "Schwartz's 10 universal values system",
+          "properties": {
+            "self_direction": {
+              "type": "object",
+              "description": "Independent thought/action, creativity, exploration (choosing freedom, curiosity, independence)",
+              "properties": {
+                "score": {"type": "number", "minimum": 0, "maximum": 1, "description": "How much this value drives behavior in this period"},
+                "confidence": {"type": "string", "enum": ["low", "medium", "high"]},
+                "evidence": {"type": "array", "items": {"type": "string"}, "description": "Value-driven choices from this period"}
+              },
+              "required": ["score", "confidence", "evidence"]
+            },
+            "stimulation": {
+              "type": "object",
+              "description": "Excitement, novelty, challenge in life (choosing adventure, risk, variety)",
+              "properties": {
+                "score": {"type": "number", "minimum": 0, "maximum": 1, "description": "How much this value drives behavior in this period"},
+                "confidence": {"type": "string", "enum": ["low", "medium", "high"]},
+                "evidence": {"type": "array", "items": {"type": "string"}, "description": "Value-driven choices from this period"}
+              },
+              "required": ["score", "confidence", "evidence"]
+            },
+            "hedonism": {
+              "type": "object",
+              "description": "Pleasure, sensuous gratification (choosing comfort, enjoyment, self-gratification)",
+              "properties": {
+                "score": {"type": "number", "minimum": 0, "maximum": 1, "description": "How much this value drives behavior in this period"},
+                "confidence": {"type": "string", "enum": ["low", "medium", "high"]},
+                "evidence": {"type": "array", "items": {"type": "string"}, "description": "Value-driven choices from this period"}
+              },
+              "required": ["score", "confidence", "evidence"]
+            },
+            "achievement": {
+              "type": "object",
+              "description": "Personal success through demonstrating competence (choosing ambition, success, capability)",
+              "properties": {
+                "score": {"type": "number", "minimum": 0, "maximum": 1, "description": "How much this value drives behavior in this period"},
+                "confidence": {"type": "string", "enum": ["low", "medium", "high"]},
+                "evidence": {"type": "array", "items": {"type": "string"}, "description": "Value-driven choices from this period"}
+              },
+              "required": ["score", "confidence", "evidence"]
+            },
+            "power": {
+              "type": "object",
+              "description": "Social status, prestige, control over people/resources (choosing authority, wealth, social power)",
+              "properties": {
+                "score": {"type": "number", "minimum": 0, "maximum": 1, "description": "How much this value drives behavior in this period"},
+                "confidence": {"type": "string", "enum": ["low", "medium", "high"]},
+                "evidence": {"type": "array", "items": {"type": "string"}, "description": "Value-driven choices from this period"}
+              },
+              "required": ["score", "confidence", "evidence"]
+            },
+            "security": {
+              "type": "object",
+              "description": "Safety, harmony, stability of society/relationships/self (choosing safety, order, stability)",
+              "properties": {
+                "score": {"type": "number", "minimum": 0, "maximum": 1, "description": "How much this value drives behavior in this period"},
+                "confidence": {"type": "string", "enum": ["low", "medium", "high"]},
+                "evidence": {"type": "array", "items": {"type": "string"}, "description": "Value-driven choices from this period"}
+              },
+              "required": ["score", "confidence", "evidence"]
+            },
+            "conformity": {
+              "type": "object",
+              "description": "Restraint of actions that might harm others or violate norms (choosing obedience, self-discipline, politeness)",
+              "properties": {
+                "score": {"type": "number", "minimum": 0, "maximum": 1, "description": "How much this value drives behavior in this period"},
+                "confidence": {"type": "string", "enum": ["low", "medium", "high"]},
+                "evidence": {"type": "array", "items": {"type": "string"}, "description": "Value-driven choices from this period"}
+              },
+              "required": ["score", "confidence", "evidence"]
+            },
+            "tradition": {
+              "type": "object",
+              "description": "Respect for customs, accepting cultural/religious traditions (choosing humility, devotion, respect for tradition)",
+              "properties": {
+                "score": {"type": "number", "minimum": 0, "maximum": 1, "description": "How much this value drives behavior in this period"},
+                "confidence": {"type": "string", "enum": ["low", "medium", "high"]},
+                "evidence": {"type": "array", "items": {"type": "string"}, "description": "Value-driven choices from this period"}
+              },
+              "required": ["score", "confidence", "evidence"]
+            },
+            "benevolence": {
+              "type": "object",
+              "description": "Preserving/enhancing welfare of close others (choosing helpfulness, loyalty, forgiveness)",
+              "properties": {
+                "score": {"type": "number", "minimum": 0, "maximum": 1, "description": "How much this value drives behavior in this period"},
+                "confidence": {"type": "string", "enum": ["low", "medium", "high"]},
+                "evidence": {"type": "array", "items": {"type": "string"}, "description": "Value-driven choices from this period"}
+              },
+              "required": ["score", "confidence", "evidence"]
+            },
+            "universalism": {
+              "type": "object",
+              "description": "Understanding, appreciation, tolerance for all people and nature (choosing social justice, equality, wisdom, unity with nature)",
+              "properties": {
+                "score": {"type": "number", "minimum": 0, "maximum": 1, "description": "How much this value drives behavior in this period"},
+                "confidence": {"type": "string", "enum": ["low", "medium", "high"]},
+                "evidence": {"type": "array", "items": {"type": "string"}, "description": "Value-driven choices from this period"}
+              },
+              "required": ["score", "confidence", "evidence"]
+            }
+          },
+          "required": ["self_direction", "stimulation", "hedonism", "achievement", "power", "security", "conformity", "tradition", "benevolence", "universalism"]
+        },
+        "jungian_archetypes": {
+          "type": "object",
+          "description": "Dominant Jungian archetypes active during this period",
+          "properties": {
+            "dominant_archetypes": {
+              "type": "array",
+              "description": "Top 3-4 archetypes manifesting in this period",
+              "items": {
+                "type": "object",
+                "properties": {
+                  "archetype": {"type": "string", "description": "Archetype name (e.g., The Hero, The Shadow, The Sage, The Explorer, The Lover, The Caregiver)"},
+                  "strength": {"type": "number", "minimum": 0, "maximum": 1, "description": "Average strength score for this period"},
+                  "confidence": {"type": "string", "enum": ["low", "medium", "high"]},
+                  "evidence": {"type": "array", "items": {"type": "string"}, "description": "Behavioral and narrative patterns demonstrating this archetype"}
+                },
+                "required": ["archetype", "strength", "confidence", "evidence"]
+              }
+            },
+            "shadow_work": {"type": "string", "description": "Shadow integration patterns (integration vs. suppression of denied aspects)"}
+          },
+          "required": ["dominant_archetypes", "shadow_work"]
+        },
+        "behavioral_patterns": {
+          "type": "array",
+          "description": "Top 5 if-then behavioral patterns from this period",
+          "items": {
+            "type": "object",
+            "properties": {
+              "if_situation": {"type": "string", "description": "Triggering situation or context"},
+              "then_response": {"type": "string", "description": "Consistent response pattern"},
+              "frequency": {"type": "number", "minimum": 0, "maximum": 1, "description": "Estimated frequency this pattern occurred (0=rare, 1=always)"},
+              "confidence": {"type": "string", "enum": ["low", "medium", "high"], "description": "Confidence in this pattern"}
+            },
+            "required": ["if_situation", "then_response", "frequency", "confidence"]
+          }
+        },
+        "defense_mechanisms": {
+          "type": "object",
+          "description": "Primary defense mechanisms used during this period",
+          "properties": {
+            "primary": {"type": "array", "items": {"type": "string"}, "description": "Main mechanisms used (e.g., intellectualization, rationalization, projection, sublimation)"},
+            "effectiveness": {"type": "string", "enum": ["low", "moderate", "high"], "description": "How well these mechanisms are working (adaptive vs. maladaptive)"}
+          },
+          "required": ["primary", "effectiveness"]
+        },
+        "emotional_profile": {
+          "type": "object",
+          "description": "Emotional landscape during this period",
+          "properties": {
+            "dominant_emotions": {"type": "array", "items": {"type": "string"}, "description": "Most frequent emotions in this period"},
+            "emotional_range": {"type": "string", "enum": ["narrow", "moderate", "wide"], "description": "Breadth of emotional expression"},
+            "regulation_strategies": {"type": "array", "items": {"type": "string"}, "description": "How emotions were regulated (e.g., suppression, reappraisal, seeking support)"},
+            "common_triggers": {"type": "array", "items": {"type": "string"}, "description": "What consistently triggered emotional responses"}
+          },
+          "required": ["dominant_emotions", "emotional_range", "regulation_strategies", "common_triggers"]
+        }
+      },
+      "required": ["big5", "attachment", "schwartz_values", "jungian_archetypes", "behavioral_patterns", "defense_mechanisms", "emotional_profile"]
+    },
+    "evolution": {
+      "type": "object",
+      "description": "How psychological traits changed within this period (compare first half vs. second half)",
+      "properties": {
+        "big5": {
+          "type": "object",
+          "description": "Big Five trait trajectories within this period",
+          "properties": {
+            "openness": {
+              "type": "object",
+              "description": "Evolution of openness during this period",
+              "properties": {
+                "trajectory": {"type": "string", "enum": ["increasing", "decreasing", "stable", "fluctuating"], "description": "Direction of change"},
+                "early_average": {"type": "number", "minimum": 0, "maximum": 1, "description": "Average score in first half of period"},
+                "late_average": {"type": "number", "minimum": 0, "maximum": 1, "description": "Average score in second half of period"},
+                "change": {"type": "number", "description": "Magnitude of change (late_average - early_average)"},
+                "change_type": {"type": "string", "enum": ["significant_improvement", "significant_decline", "minor_shift", "stable"], "description": "Significance of the change"},
+                "notes": {"type": "string", "description": "Context about the change, notable shifts or turning points"},
+                "aspect_changes": {
+                  "type": "object",
+                  "description": "How each aspect evolved (allows tracking split development)",
+                  "properties": {
+                    "intellect": {"type": "string", "description": "Evolution of Intellect aspect (e.g., 'increased from 0.6 to 0.75')"},
+                    "openness_to_experience": {"type": "string", "description": "Evolution of Openness to Experience aspect"}
+                  },
+                  "required": ["intellect", "openness_to_experience"]
+                }
+              },
+              "required": ["trajectory", "early_average", "late_average", "change", "change_type", "notes", "aspect_changes"]
+            },
+            "conscientiousness": {
+              "type": "object",
+              "description": "Evolution of conscientiousness during this period",
+              "properties": {
+                "trajectory": {"type": "string", "enum": ["increasing", "decreasing", "stable", "fluctuating"], "description": "Direction of change"},
+                "early_average": {"type": "number", "minimum": 0, "maximum": 1, "description": "Average score in first half of period"},
+                "late_average": {"type": "number", "minimum": 0, "maximum": 1, "description": "Average score in second half of period"},
+                "change": {"type": "number", "description": "Magnitude of change (late_average - early_average)"},
+                "change_type": {"type": "string", "enum": ["significant_improvement", "significant_decline", "minor_shift", "stable"], "description": "Significance of the change"},
+                "notes": {"type": "string", "description": "Context about the change, notable shifts or turning points"},
+                "aspect_changes": {
+                  "type": "object",
+                  "description": "How each aspect evolved (allows tracking split development)",
+                  "properties": {
+                    "industriousness": {"type": "string", "description": "Evolution of Industriousness aspect"},
+                    "orderliness": {"type": "string", "description": "Evolution of Orderliness aspect"}
+                  },
+                  "required": ["industriousness", "orderliness"]
+                }
+              },
+              "required": ["trajectory", "early_average", "late_average", "change", "change_type", "notes", "aspect_changes"]
+            },
+            "extraversion": {
+              "type": "object",
+              "description": "Evolution of extraversion during this period",
+              "properties": {
+                "trajectory": {"type": "string", "enum": ["increasing", "decreasing", "stable", "fluctuating"], "description": "Direction of change"},
+                "early_average": {"type": "number", "minimum": 0, "maximum": 1, "description": "Average score in first half of period"},
+                "late_average": {"type": "number", "minimum": 0, "maximum": 1, "description": "Average score in second half of period"},
+                "change": {"type": "number", "description": "Magnitude of change (late_average - early_average)"},
+                "change_type": {"type": "string", "enum": ["significant_improvement", "significant_decline", "minor_shift", "stable"], "description": "Significance of the change"},
+                "notes": {"type": "string", "description": "Context about the change, notable shifts or turning points"},
+                "aspect_changes": {
+                  "type": "object",
+                  "description": "How each aspect evolved (allows tracking split development)",
+                  "properties": {
+                    "enthusiasm": {"type": "string", "description": "Evolution of Enthusiasm aspect"},
+                    "assertiveness": {"type": "string", "description": "Evolution of Assertiveness aspect"}
+                  },
+                  "required": ["enthusiasm", "assertiveness"]
+                }
+              },
+              "required": ["trajectory", "early_average", "late_average", "change", "change_type", "notes", "aspect_changes"]
+            },
+            "agreeableness": {
+              "type": "object",
+              "description": "Evolution of agreeableness during this period",
+              "properties": {
+                "trajectory": {"type": "string", "enum": ["increasing", "decreasing", "stable", "fluctuating"], "description": "Direction of change"},
+                "early_average": {"type": "number", "minimum": 0, "maximum": 1, "description": "Average score in first half of period"},
+                "late_average": {"type": "number", "minimum": 0, "maximum": 1, "description": "Average score in second half of period"},
+                "change": {"type": "number", "description": "Magnitude of change (late_average - early_average)"},
+                "change_type": {"type": "string", "enum": ["significant_improvement", "significant_decline", "minor_shift", "stable"], "description": "Significance of the change"},
+                "notes": {"type": "string", "description": "Context about the change, notable shifts or turning points"},
+                "aspect_changes": {
+                  "type": "object",
+                  "description": "How each aspect evolved (allows tracking split development)",
+                  "properties": {
+                    "compassion": {"type": "string", "description": "Evolution of Compassion aspect"},
+                    "politeness": {"type": "string", "description": "Evolution of Politeness aspect"}
+                  },
+                  "required": ["compassion", "politeness"]
+                }
+              },
+              "required": ["trajectory", "early_average", "late_average", "change", "change_type", "notes", "aspect_changes"]
+            },
+            "neuroticism": {
+              "type": "object",
+              "description": "Evolution of neuroticism during this period",
+              "properties": {
+                "trajectory": {"type": "string", "enum": ["increasing", "decreasing", "stable", "fluctuating"], "description": "Direction of change"},
+                "early_average": {"type": "number", "minimum": 0, "maximum": 1, "description": "Average score in first half of period"},
+                "late_average": {"type": "number", "minimum": 0, "maximum": 1, "description": "Average score in second half of period"},
+                "change": {"type": "number", "description": "Magnitude of change (late_average - early_average)"},
+                "change_type": {"type": "string", "enum": ["significant_improvement", "significant_decline", "minor_shift", "stable"], "description": "Significance of the change"},
+                "notes": {"type": "string", "description": "Context about the change, notable shifts or turning points"},
+                "aspect_changes": {
+                  "type": "object",
+                  "description": "How each aspect evolved (allows tracking split development)",
+                  "properties": {
+                    "volatility": {"type": "string", "description": "Evolution of Volatility aspect"},
+                    "withdrawal": {"type": "string", "description": "Evolution of Withdrawal aspect"}
+                  },
+                  "required": ["volatility", "withdrawal"]
+                }
+              },
+              "required": ["trajectory", "early_average", "late_average", "change", "change_type", "notes", "aspect_changes"]
+            }
+          },
+          "required": ["openness", "conscientiousness", "extraversion", "agreeableness", "neuroticism"]
+        },
+        "attachment": {
+          "type": "object",
+          "description": "Evolution of attachment style during this period",
+          "properties": {
+            "trajectory": {"type": "string", "description": "How anxiety/avoidance dimensions shifted (e.g., 'anxiety decreasing', 'moving toward secure', 'stable anxious')"},
+            "notes": {"type": "string", "description": "New activation patterns or shifts in attachment behavior"}
+          },
+          "required": ["trajectory", "notes"]
+        },
+        "key_changes": {
+          "type": "array",
+          "description": "Significant changes during this period (value shifts, pattern emergence/weakening, turning points)",
+          "items": {"type": "string"}
+        }
+      },
+      "required": ["big5", "attachment", "key_changes"]
+    },
+    "meta": {
+      "type": "object",
+      "properties": {
+        "branches_count": {"type": "integer", "minimum": 0},
+        "items_aggregated": {"type": "integer", "minimum": 0},
+        "aggregation_method": {"type": "string", "enum": ["from_branches", "from_sub_summaries"]},
+        "confidence_notes": {"type": "string"}
+      },
+      "required": ["branches_count", "items_aggregated", "aggregation_method", "confidence_notes"]
+    },
+    "period_summary": {
+      "type": "string",
+      "description": "200-300 word clinical narrative describing this period"
+    }
+  },
+  "required": ["thinking", "period", "level", "date_range", "current_state", "evolution", "meta", "period_summary"],
+  "additionalProperties": false
+}

@@ -1,0 +1,179 @@
+# ====================================
+# ST-Mirror Configuration
+# ====================================
+# Sensible defaults for most users. Customize as needed.
+# Environment variables can override: RP_MODELS_PHASE2_SYNTHESIS_MAX_TOKENS=20000
+
+# ====================================
+# User Profile Settings
+# ====================================
+user:
+  # Your name (used in companion export for personalization)
+  name: "Alex"  # Change this to your preferred name
+
+  # Pronouns for companion export (makes it more personal)
+  # Options: "he/him", "she/her", "they/them", etc
+  pronouns: "he/him"
+
+# ====================================
+# Model Selection & Parameters
+# ====================================
+# Pipeline execution order (optimized for cost efficiency):
+# 1. Classification: Filter test/broken branches (~$0.0001 per branch)
+# 2. Phase 1 (evidence): Extract psychological data (~$0.002 per branch)
+# 3. Phase 2 (synthesis): Build psychological profiles (~$0.005 per branch)
+# 4. Aggregation: Track evolution over time (~$0.01 per period)
+
+models:
+  # Step 1: Branch classification - Fast pre-filter to skip test/broken branches
+  # Uses cheapest model (Flash Lite) for cost efficiency
+  # Runs FIRST to avoid wasting money on junk data
+  classification:
+    name: "google/gemini-2.5-flash-lite-preview-09-2025"
+    retries: 3  # More retries = fewer false negatives (don't want to skip valid branches)
+    timeout_seconds: 30  # Fast classification (only analyzing ~50 messages)
+
+  # Step 2: Phase 1 - Evidence extraction from chat messages
+  # Uses cheap Gemini Flash Lite with 3-stage fallback for reliability
+  # Runs on branches that passed classification
+  phase1_evidence:
+    primary:
+      name: "google/gemini-2.5-flash-lite-preview-09-2025"
+      temperature: 0.3  # Lower = more consistent, higher = more creative (0.0-1.0)
+      max_tokens: 5000  # Max output length (evidence extraction is compact)
+      reasoning_effort: "medium"  # Gemini reasoning mode: low/medium/high (higher = slower but smarter)
+      retries: 2  # Retry failed requests N times before fallback
+      timeout_seconds: 60  # Wait up to N seconds per request
+
+    # Fallback 1: Same model, higher reasoning (if medium fails)
+    fallback_high_reasoning:
+      name: "google/gemini-2.5-flash-lite-preview-09-2025"
+      temperature: 0.3
+      max_tokens: 5000
+      reasoning_effort: "high"  # Max reasoning for tough cases
+      retries: 2
+      timeout_seconds: 60
+
+    # Fallback 2: Different model with strict schema (if Gemini fails)
+    fallback_kimi:
+      name: "moonshotai/kimi-k2-0905"  # Kimi K2 = reliable structured output
+      temperature: 0.3
+      max_tokens: 5000
+      retries: 2
+      timeout_seconds: 60
+
+  # Step 3: Phase 2 - Profile synthesis (aggregates all evidence into psychological profile)
+  # Uses Kimi K2 for structured output reliability
+  # Runs after Phase 1 extracts evidence from all chunks
+  phase2_synthesis:
+    name: "moonshotai/kimi-k2-0905"  # K2 = 9x faster than DeepSeek, cheaper than Claude
+    temperature: 0.3
+    max_tokens: 12000  # Larger output needed for full profile (Big5, attachment, values, etc.)
+    retries: 3  # More retries = more reliable (synthesis is expensive to re-run)
+    timeout_seconds: 120  # Synthesis takes longer (more complex reasoning)
+
+  # Step 4: Hierarchical aggregation - Combines profiles across time (weeks→months→years→life)
+  # Uses Kimi K2 for large context + structured output
+  # Runs LAST to build your complete psychological timeline
+  aggregation:
+    name: "moonshotai/kimi-k2-0905"
+    temperature: 0.3
+    max_tokens: 12000  # Large output for evolution tracking
+    retries: 3
+
+    # Adaptive timeouts: Larger aggregations need more time
+    # Week: 5-15 profiles → 2min
+    # Month: 4-12 weeks → 3min
+    # Year: 12 months → 4min
+    # Life: Multiple years → 5min
+    timeout_week_seconds: 120
+    timeout_month_seconds: 180
+    timeout_year_seconds: 240
+    timeout_life_seconds: 300
+
+# ====================================
+# Processing Settings
+# ====================================
+# Controls how the pipeline processes your data (matches model execution order)
+
+processing:
+  # Step 1: Branch classification - Filters test/empty chats before expensive processing
+  # The classifier samples messages from beginning/middle/end to detect:
+  # - Test branches ("test test", no substance)
+  # - Abandoned chats (user quit after 2 messages)
+  # - Corrupted/broken files
+  # This saves ~$0.68 per filtered branch by avoiding full profiling
+  classifier:
+    max_parallel: 10  # Concurrent classification requests (10 = safe default, 15+ may hit rate limits)
+
+    # Heuristic prefilter: Fast checks before LLM classification (FREE)
+    # These catch obviously broken/corrupt data without spending API credits
+    min_messages: 100  # Branches shorter than this skip processing (sequential needs ~100+ for chunking)
+    min_valid_message_ratio: 0.5  # Require at least 50% of messages have valid 'mes' field (else: corrupted JSONL)
+    repetition_check_threshold: 10  # If all messages identical after N messages, flag as corrupted
+
+    # Sampling: Only send a subset of messages to the LLM (cheaper + faster)
+    sample_size: 50  # Total messages to analyze (default 50 = ~$0.0001 per branch)
+    message_char_limit: 200  # Truncate long messages to first N chars (prevents token bloat)
+
+    # Sample strategy: Where to pull messages from
+    # Beginning catches "test test test" spam
+    # Middle confirms user didn't abandon early
+    # End checks for proper conclusion vs abrupt stop
+    sample_strategy:
+      beginning: 15  # Messages from start (skips msg 0 = generic greeting)
+      middle: 10     # Messages from center
+      end: 10        # Messages from end
+      # Total: ~35 messages (before deduplication), capped at sample_size
+
+  # Step 2: Branch profiler - Converts raw chats → psychological profiles
+  # Runs on branches that passed classification
+  profiler:
+    max_parallel: 5  # Process N branches concurrently (5 = safe default, 15+ may hit rate limits)
+
+    # Arc detection: Splits long chats into narrative segments
+    # RPs shift between modes (flirty→serious→playful). Each "arc" = coherent segment.
+    chunk_window_size: 50  # Compare N messages at a time to detect shifts
+    min_arc_length: 50  # Arcs shorter than this get merged (avoids tiny fragments)
+    # Why this matters: Long RP (1000+ msgs) needs splitting or LLM context explodes
+    # Example: 1000 msg chat → ~20 arcs of 50 msgs each → processable chunks
+
+  # Step 3: Hierarchical aggregator - Combines profiles across time
+  # Your profile changes over months/years. Aggregation tracks evolution.
+  # Runs LAST after all branches are profiled
+  aggregator:
+    max_parallel: 5  # Process N periods concurrently (5 = safe default, 15+ may hit rate limits)
+
+    # Adaptive splitting: Large time periods auto-split to fit LLM context
+    max_profiles_per_aggregation: 15  # If month has >15 branches, split into weeks first
+    token_budget_threshold: 30000  # Estimated tokens - split if exceeded (~15 profiles @ 2k each)
+    # Why: Prevents LLM context overflow. Month with 50 profiles → split to weeks, then aggregate weeks → month
+    # Example: Jan 2025 (50 profiles) → 4 weeks → aggregate weeks → January summary → works!
+
+# ====================================
+# Network Settings
+# ====================================
+# Controls API reliability and connection pooling
+
+network:
+  # Exponential backoff: How long to wait between retries on failure
+  # Formula: wait = backoff_base ^ attempt
+  # backoff_base: 2 → delays: 1s, 2s, 4s, 8s, 16s...
+  # backoff_base: 3 → delays: 1s, 3s, 9s, 27s... (more aggressive)
+  # Why: Server errors (502, 503) are often temporary. Backoff prevents hammering.
+  backoff_base: 2
+
+  # HTTP connection pooling
+  # Reuses TCP connections to OpenRouter for faster requests
+  # Higher = more parallel requests, but may hit provider limits
+  max_connections_per_host: 10  # Safe default for OpenRouter (tested up to 15)
+
+# ====================================
+# Cost Tracking (Informational)
+# ====================================
+# Approximate costs per 1M tokens (input + output)
+# Used for rough estimation. Actual costs from OpenRouter API (when working).
+# Note: Cost tracking currently broken - see README TODO
+costs:
+  google/gemini-2.5-flash-lite-preview-09-2025: 0.000002  # ~$0.002 per 1M tokens
+  moonshotai/kimi-k2-0905: 0.000005  # ~$0.005 per 1M tokens

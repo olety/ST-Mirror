@@ -1,0 +1,16 @@
+# RP Profile Toolkit - Python Dependencies
+# Install with: pip install -r requirements.txt
+
+# Core networking
+httpx>=0.24.0
+
+# Terminal UI
+rich>=13.0.0
+
+# Configuration management
+pydantic>=2.0.0
+pyyaml>=6.0
+
+# JSON validation and repair
+jsonschema>=4.17.0
+json-repair>=0.7.0

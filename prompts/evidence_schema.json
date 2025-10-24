@@ -1,0 +1,122 @@
+{
+  "type": "object",
+  "properties": {
+    "chunk_id": {
+      "type": "string",
+      "description": "Identifier for this chunk"
+    },
+    "chunk_summary": {
+      "type": "string",
+      "maxLength": 200,
+      "description": "1-2 sentence narrative summary of what happened in THIS chunk only"
+    },
+    "word_count": {
+      "type": "integer",
+      "description": "Approximate word count of content"
+    },
+    "ic_ooc_ratio": {
+      "type": "number",
+      "minimum": 0,
+      "maximum": 1,
+      "description": "Ratio of in-character to total content"
+    },
+    "decisions": {
+      "type": "array",
+      "maxItems": 5,
+      "items": {
+        "type": "object",
+        "properties": {
+          "choice": {"type": "string", "maxLength": 100},
+          "alternative": {"type": "string", "maxLength": 100},
+          "context": {"type": "string", "maxLength": 200}
+        },
+        "required": ["choice", "alternative"]
+      },
+      "description": "Key decision points with alternatives"
+    },
+    "emotional_moments": {
+      "type": "array",
+      "maxItems": 5,
+      "items": {
+        "type": "object",
+        "properties": {
+          "emotion": {
+            "type": "string",
+            "enum": ["anger", "fear", "sadness", "joy", "surprise", "vulnerability", "affection", "anxiety"]
+          },
+          "intensity": {
+            "type": "string",
+            "enum": ["low", "medium", "high"]
+          },
+          "trigger": {"type": "string", "maxLength": 100}
+        },
+        "required": ["emotion", "intensity"]
+      }
+    },
+    "behavioral_patterns": {
+      "type": "array",
+      "maxItems": 3,
+      "items": {
+        "type": "string",
+        "maxLength": 150
+      },
+      "description": "Repeated behaviors or responses"
+    },
+    "relationship_dynamics": {
+      "type": "object",
+      "properties": {
+        "power_balance": {
+          "type": "string",
+          "enum": ["submissive", "equal", "dominant", "shifting"]
+        },
+        "intimacy_level": {
+          "type": "string",
+          "enum": ["distant", "casual", "close", "intimate"]
+        },
+        "conflict_present": {
+          "type": "boolean"
+        },
+        "boundary_setting": {
+          "type": "boolean"
+        }
+      }
+    },
+    "key_quotes": {
+      "type": "array",
+      "maxItems": 5,
+      "items": {
+        "type": "string",
+        "maxLength": 200
+      },
+      "description": "Most psychologically revealing quotes"
+    },
+    "context_flags": {
+      "type": "object",
+      "properties": {
+        "has_vulnerability": {"type": "boolean"},
+        "has_conflict": {"type": "boolean"},
+        "has_intimacy": {"type": "boolean"},
+        "has_humor": {"type": "boolean"},
+        "has_creativity": {"type": "boolean"},
+        "has_boundary_setting": {"type": "boolean"},
+        "has_emotional_support": {"type": "boolean"}
+      },
+      "description": "Quick boolean flags for filtering"
+    },
+    "if_then_observations": {
+      "type": "array",
+      "maxItems": 3,
+      "items": {
+        "type": "object",
+        "properties": {
+          "if_situation": {"type": "string", "maxLength": 100},
+          "then_response": {"type": "string", "maxLength": 100}
+        },
+        "required": ["if_situation", "then_response"]
+      },
+      "description": "Observed behavioral patterns"
+    }
+  },
+  "required": ["chunk_id", "chunk_summary", "decisions", "emotional_moments", "key_quotes", "context_flags"],
+  "additionalProperties": false
+}

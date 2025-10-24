@@ -1,0 +1,581 @@
+{
+  "type": "object",
+  "properties": {
+    "thinking": {
+      "type": "string",
+      "description": "Extensive reasoning about recency weighting, evolution trajectory, turning points, pattern stability, growth narrative, companion export"
+    },
+    "profile_id": {
+      "type": "string",
+      "description": "Unique identifier for this life profile"
+    },
+    "data_summary": {
+      "type": "object",
+      "properties": {
+        "total_branches": {"type": "integer", "minimum": 0},
+        "total_periods": {"type": "integer", "minimum": 0},
+        "date_range": {"type": "string"},
+        "time_span": {"type": "string"},
+        "period_ids": {"type": "array", "items": {"type": "string"}}
+      },
+      "required": ["total_branches", "total_periods", "date_range", "time_span", "period_ids"]
+    },
+    "current_state": {
+      "type": "object",
+      "description": "WHO THE PERSON IS NOW - Recency-weighted (oldest 1/3: 0.5x, middle 1/3: 1.0x, recent 1/3: 2.0x)",
+      "properties": {
+        "big5": {
+          "type": "object",
+          "description": "Big Five personality traits (recency-weighted: recent periods count more)",
+          "properties": {
+            "openness": {
+              "type": "object",
+              "description": "Creativity, curiosity, openness to experience",
+              "properties": {
+                "score": {"type": "number", "minimum": 0, "maximum": 1, "description": "Recency-weighted openness score"},
+                "confidence": {"type": "string", "enum": ["low", "medium", "high"], "description": "Confidence (high for life-level with extensive data)"},
+                "evidence": {"type": "array", "items": {"type": "string"}, "description": "Key evidence across timeline, emphasizing recent periods"},
+                "aspects": {
+                  "type": "object",
+                  "description": "Openness sub-facets (recency-weighted)",
+                  "properties": {
+                    "intellect": {"type": "object", "properties": {"score": {"type": "number", "minimum": 0, "maximum": 1}, "confidence": {"type": "string", "enum": ["low", "medium", "high"]}, "evidence": {"type": "array", "items": {"type": "string"}}}, "required": ["score", "confidence", "evidence"]},
+                    "openness_to_experience": {"type": "object", "properties": {"score": {"type": "number", "minimum": 0, "maximum": 1}, "confidence": {"type": "string", "enum": ["low", "medium", "high"]}, "evidence": {"type": "array", "items": {"type": "string"}}}, "required": ["score", "confidence", "evidence"]}
+                  },
+                  "required": ["intellect", "openness_to_experience"]
+                }
+              },
+              "required": ["score", "confidence", "evidence", "aspects"]
+            },
+            "conscientiousness": {
+              "type": "object",
+              "description": "Organization, dependability, self-discipline",
+              "properties": {
+                "score": {"type": "number", "minimum": 0, "maximum": 1, "description": "Recency-weighted conscientiousness score"},
+                "confidence": {"type": "string", "enum": ["low", "medium", "high"], "description": "Confidence (high for life-level with extensive data)"},
+                "evidence": {"type": "array", "items": {"type": "string"}, "description": "Key evidence across timeline, emphasizing recent periods"},
+                "aspects": {
+                  "type": "object",
+                  "description": "Conscientiousness sub-facets (recency-weighted)",
+                  "properties": {
+                    "industriousness": {"type": "object", "properties": {"score": {"type": "number", "minimum": 0, "maximum": 1}, "confidence": {"type": "string", "enum": ["low", "medium", "high"]}, "evidence": {"type": "array", "items": {"type": "string"}}}, "required": ["score", "confidence", "evidence"]},
+                    "orderliness": {"type": "object", "properties": {"score": {"type": "number", "minimum": 0, "maximum": 1}, "confidence": {"type": "string", "enum": ["low", "medium", "high"]}, "evidence": {"type": "array", "items": {"type": "string"}}}, "required": ["score", "confidence", "evidence"]}
+                  },
+                  "required": ["industriousness", "orderliness"]
+                }
+              },
+              "required": ["score", "confidence", "evidence", "aspects"]
+            },
+            "extraversion": {
+              "type": "object",
+              "description": "Sociability, assertiveness, emotional expression",
+              "properties": {
+                "score": {"type": "number", "minimum": 0, "maximum": 1, "description": "Recency-weighted extraversion score"},
+                "confidence": {"type": "string", "enum": ["low", "medium", "high"], "description": "Confidence (high for life-level with extensive data)"},
+                "evidence": {"type": "array", "items": {"type": "string"}, "description": "Key evidence across timeline, emphasizing recent periods"},
+                "aspects": {
+                  "type": "object",
+                  "description": "Extraversion sub-facets (recency-weighted)",
+                  "properties": {
+                    "enthusiasm": {"type": "object", "properties": {"score": {"type": "number", "minimum": 0, "maximum": 1}, "confidence": {"type": "string", "enum": ["low", "medium", "high"]}, "evidence": {"type": "array", "items": {"type": "string"}}}, "required": ["score", "confidence", "evidence"]},
+                    "assertiveness": {"type": "object", "properties": {"score": {"type": "number", "minimum": 0, "maximum": 1}, "confidence": {"type": "string", "enum": ["low", "medium", "high"]}, "evidence": {"type": "array", "items": {"type": "string"}}}, "required": ["score", "confidence", "evidence"]}
+                  },
+                  "required": ["enthusiasm", "assertiveness"]
+                }
+              },
+              "required": ["score", "confidence", "evidence", "aspects"]
+            },
+            "agreeableness": {
+              "type": "object",
+              "description": "Cooperation, trust, empathy",
+              "properties": {
+                "score": {"type": "number", "minimum": 0, "maximum": 1, "description": "Recency-weighted agreeableness score"},
+                "confidence": {"type": "string", "enum": ["low", "medium", "high"], "description": "Confidence (high for life-level with extensive data)"},
+                "evidence": {"type": "array", "items": {"type": "string"}, "description": "Key evidence across timeline, emphasizing recent periods"},
+                "aspects": {
+                  "type": "object",
+                  "description": "Agreeableness sub-facets (recency-weighted)",
+                  "properties": {
+                    "compassion": {"type": "object", "properties": {"score": {"type": "number", "minimum": 0, "maximum": 1}, "confidence": {"type": "string", "enum": ["low", "medium", "high"]}, "evidence": {"type": "array", "items": {"type": "string"}}}, "required": ["score", "confidence", "evidence"]},
+                    "politeness": {"type": "object", "properties": {"score": {"type": "number", "minimum": 0, "maximum": 1}, "confidence": {"type": "string", "enum": ["low", "medium", "high"]}, "evidence": {"type": "array", "items": {"type": "string"}}}, "required": ["score", "confidence", "evidence"]}
+                  },
+                  "required": ["compassion", "politeness"]
+                }
+              },
+              "required": ["score", "confidence", "evidence", "aspects"]
+            },
+            "neuroticism": {
+              "type": "object",
+              "description": "Emotional instability, anxiety, moodiness",
+              "properties": {
+                "score": {"type": "number", "minimum": 0, "maximum": 1, "description": "Recency-weighted neuroticism score"},
+                "confidence": {"type": "string", "enum": ["low", "medium", "high"], "description": "Confidence (high for life-level with extensive data)"},
+                "evidence": {"type": "array", "items": {"type": "string"}, "description": "Key evidence across timeline, emphasizing recent periods"},
+                "aspects": {
+                  "type": "object",
+                  "description": "Neuroticism sub-facets (recency-weighted)",
+                  "properties": {
+                    "volatility": {"type": "object", "properties": {"score": {"type": "number", "minimum": 0, "maximum": 1}, "confidence": {"type": "string", "enum": ["low", "medium", "high"]}, "evidence": {"type": "array", "items": {"type": "string"}}}, "required": ["score", "confidence", "evidence"]},
+                    "withdrawal": {"type": "object", "properties": {"score": {"type": "number", "minimum": 0, "maximum": 1}, "confidence": {"type": "string", "enum": ["low", "medium", "high"]}, "evidence": {"type": "array", "items": {"type": "string"}}}, "required": ["score", "confidence", "evidence"]}
+                  },
+                  "required": ["volatility", "withdrawal"]
+                }
+              },
+              "required": ["score", "confidence", "evidence", "aspects"]
+            }
+          },
+          "required": ["openness", "conscientiousness", "extraversion", "agreeableness", "neuroticism"]
+        },
+        "attachment": {
+          "type": "object",
+          "description": "Current attachment style (recency-weighted)",
+          "properties": {
+            "primary_style": {"type": "string", "enum": ["secure", "anxious", "avoidant", "disorganized"], "description": "Primary style NOW (with healing context if changed)"},
+            "anxiety_dimension": {"type": "number", "minimum": 0, "maximum": 1, "description": "Current fear of abandonment (0=low, 1=high)"},
+            "avoidance_dimension": {"type": "number", "minimum": 0, "maximum": 1, "description": "Current discomfort with intimacy (0=low, 1=high)"},
+            "evidence": {"type": "array", "items": {"type": "string"}, "description": "Recent attachment activation patterns"}
+          },
+          "required": ["primary_style", "anxiety_dimension", "avoidance_dimension", "evidence"]
+        },
+        "schwartz_values": {
+          "type": "object",
+          "description": "Current Schwartz values (recency-weighted)",
+          "properties": {
+            "self_direction": {
+              "type": "object",
+              "description": "Independent thought/action, creativity, exploration (choosing freedom, curiosity, independence)",
+              "properties": {
+                "score": {"type": "number", "minimum": 0, "maximum": 1, "description": "How much this value currently drives behavior"},
+                "confidence": {"type": "string", "enum": ["low", "medium", "high"]},
+                "evidence": {"type": "array", "items": {"type": "string"}, "description": "Recent value-driven choices"}
+              },
+              "required": ["score", "confidence", "evidence"]
+            },
+            "stimulation": {
+              "type": "object",
+              "description": "Excitement, novelty, challenge in life (choosing adventure, risk, variety)",
+              "properties": {
+                "score": {"type": "number", "minimum": 0, "maximum": 1, "description": "How much this value currently drives behavior"},
+                "confidence": {"type": "string", "enum": ["low", "medium", "high"]},
+                "evidence": {"type": "array", "items": {"type": "string"}, "description": "Recent value-driven choices"}
+              },
+              "required": ["score", "confidence", "evidence"]
+            },
+            "hedonism": {
+              "type": "object",
+              "description": "Pleasure, sensuous gratification (choosing comfort, enjoyment, self-gratification)",
+              "properties": {
+                "score": {"type": "number", "minimum": 0, "maximum": 1, "description": "How much this value currently drives behavior"},
+                "confidence": {"type": "string", "enum": ["low", "medium", "high"]},
+                "evidence": {"type": "array", "items": {"type": "string"}, "description": "Recent value-driven choices"}
+              },
+              "required": ["score", "confidence", "evidence"]
+            },
+            "achievement": {
+              "type": "object",
+              "description": "Personal success through demonstrating competence (choosing ambition, success, capability)",
+              "properties": {
+                "score": {"type": "number", "minimum": 0, "maximum": 1, "description": "How much this value currently drives behavior"},
+                "confidence": {"type": "string", "enum": ["low", "medium", "high"]},
+                "evidence": {"type": "array", "items": {"type": "string"}, "description": "Recent value-driven choices"}
+              },
+              "required": ["score", "confidence", "evidence"]
+            },
+            "power": {
+              "type": "object",
+              "description": "Social status, prestige, control over people/resources (choosing authority, wealth, social power)",
+              "properties": {
+                "score": {"type": "number", "minimum": 0, "maximum": 1, "description": "How much this value currently drives behavior"},
+                "confidence": {"type": "string", "enum": ["low", "medium", "high"]},
+                "evidence": {"type": "array", "items": {"type": "string"}, "description": "Recent value-driven choices"}
+              },
+              "required": ["score", "confidence", "evidence"]
+            },
+            "security": {
+              "type": "object",
+              "description": "Safety, harmony, stability of society/relationships/self (choosing safety, order, stability)",
+              "properties": {
+                "score": {"type": "number", "minimum": 0, "maximum": 1, "description": "How much this value currently drives behavior"},
+                "confidence": {"type": "string", "enum": ["low", "medium", "high"]},
+                "evidence": {"type": "array", "items": {"type": "string"}, "description": "Recent value-driven choices"}
+              },
+              "required": ["score", "confidence", "evidence"]
+            },
+            "conformity": {
+              "type": "object",
+              "description": "Restraint of actions that might harm others or violate norms (choosing obedience, self-discipline, politeness)",
+              "properties": {
+                "score": {"type": "number", "minimum": 0, "maximum": 1, "description": "How much this value currently drives behavior"},
+                "confidence": {"type": "string", "enum": ["low", "medium", "high"]},
+                "evidence": {"type": "array", "items": {"type": "string"}, "description": "Recent value-driven choices"}
+              },
+              "required": ["score", "confidence", "evidence"]
+            },
+            "tradition": {
+              "type": "object",
+              "description": "Respect for customs, accepting cultural/religious traditions (choosing humility, devotion, respect for tradition)",
+              "properties": {
+                "score": {"type": "number", "minimum": 0, "maximum": 1, "description": "How much this value currently drives behavior"},
+                "confidence": {"type": "string", "enum": ["low", "medium", "high"]},
+                "evidence": {"type": "array", "items": {"type": "string"}, "description": "Recent value-driven choices"}
+              },
+              "required": ["score", "confidence", "evidence"]
+            },
+            "benevolence": {
+              "type": "object",
+              "description": "Preserving/enhancing welfare of close others (choosing helpfulness, loyalty, forgiveness)",
+              "properties": {
+                "score": {"type": "number", "minimum": 0, "maximum": 1, "description": "How much this value currently drives behavior"},
+                "confidence": {"type": "string", "enum": ["low", "medium", "high"]},
+                "evidence": {"type": "array", "items": {"type": "string"}, "description": "Recent value-driven choices"}
+              },
+              "required": ["score", "confidence", "evidence"]
+            },
+            "universalism": {
+              "type": "object",
+              "description": "Understanding, appreciation, tolerance for all people and nature (choosing social justice, equality, wisdom, unity with nature)",
+              "properties": {
+                "score": {"type": "number", "minimum": 0, "maximum": 1, "description": "How much this value currently drives behavior"},
+                "confidence": {"type": "string", "enum": ["low", "medium", "high"]},
+                "evidence": {"type": "array", "items": {"type": "string"}, "description": "Recent value-driven choices"}
+              },
+              "required": ["score", "confidence", "evidence"]
+            }
+          },
+          "required": ["self_direction", "stimulation", "hedonism", "achievement", "power", "security", "conformity", "tradition", "benevolence", "universalism"]
+        },
+        "jungian_archetypes": {
+          "type": "object",
+          "description": "Currently dominant Jungian archetypes (recency-weighted)",
+          "properties": {
+            "dominant_archetypes": {
+              "type": "array",
+              "description": "Top 3-4 archetypes currently active",
+              "items": {
+                "type": "object",
+                "properties": {
+                  "archetype": {"type": "string", "description": "Archetype name (e.g., The Hero, The Shadow, The Sage, The Explorer, The Lover)"},
+                  "strength": {"type": "number", "minimum": 0, "maximum": 1, "description": "Current strength (recency-weighted)"},
+                  "confidence": {"type": "string", "enum": ["low", "medium", "high"]},
+                  "evidence": {"type": "array", "items": {"type": "string"}, "description": "Recent behavioral and narrative patterns"}
+                },
+                "required": ["archetype", "strength", "confidence", "evidence"]
+              }
+            },
+            "shadow_work": {"type": "string", "description": "Current shadow integration patterns"}
+          },
+          "required": ["dominant_archetypes", "shadow_work"]
+        },
+        "behavioral_patterns": {
+          "type": "array",
+          "description": "Top 5 current if-then behavioral patterns (recency-weighted)",
+          "items": {
+            "type": "object",
+            "properties": {
+              "if_situation": {"type": "string", "description": "Triggering situation"},
+              "then_response": {"type": "string", "description": "Typical response"},
+              "frequency": {"type": "number", "minimum": 0, "maximum": 1, "description": "Current frequency"},
+              "confidence": {"type": "string", "enum": ["low", "medium", "high"]}
+            },
+            "required": ["if_situation", "then_response", "frequency", "confidence"]
+          }
+        },
+        "defense_mechanisms": {
+          "type": "object",
+          "description": "Currently active defense mechanisms (recency-weighted)",
+          "properties": {
+            "primary": {"type": "array", "items": {"type": "string"}, "description": "Main mechanisms used recently"},
+            "effectiveness": {"type": "string", "enum": ["low", "moderate", "high"], "description": "Current effectiveness"}
+          },
+          "required": ["primary", "effectiveness"]
+        },
+        "emotional_profile": {
+          "type": "object",
+          "description": "Current emotional landscape (recency-weighted)",
+          "properties": {
+            "dominant_emotions": {"type": "array", "items": {"type": "string"}, "description": "Most frequent recent emotions"},
+            "emotional_range": {"type": "string", "enum": ["narrow", "moderate", "wide"], "description": "Current emotional breadth"},
+            "regulation_strategies": {"type": "array", "items": {"type": "string"}, "description": "Current regulation methods"},
+            "common_triggers": {"type": "array", "items": {"type": "string"}, "description": "Current triggers"}
+          },
+          "required": ["dominant_emotions", "emotional_range", "regulation_strategies", "common_triggers"]
+        },
+        "recency_weighted": {"type": "boolean", "description": "Always true for life-level profiles"},
+        "confidence_level": {"type": "string", "enum": ["low", "medium", "high", "very_high"], "description": "Very high due to extensive longitudinal data"}
+      },
+      "required": ["big5", "attachment", "schwartz_values", "jungian_archetypes", "behavioral_patterns", "defense_mechanisms", "emotional_profile", "recency_weighted", "confidence_level"]
+    },
+    "evolution": {
+      "type": "object",
+      "description": "HOW THE PERSON HAS CHANGED - Long-term trajectories across entire timeline (earliest period to most recent)",
+      "properties": {
+        "big5": {
+          "type": "object",
+          "description": "Big Five trait evolution from earliest to most recent periods",
+          "additionalProperties": {
+            "type": "object",
+            "properties": {
+              "trajectory": {"type": "string", "enum": ["sustained_improvement", "sustained_decline", "stable", "U-shaped", "inverted-U"], "description": "Overall trajectory pattern across timeline"},
+              "earliest_average": {"type": "number", "minimum": 0, "maximum": 1, "description": "Average score in earliest periods"},
+              "recent_average": {"type": "number", "minimum": 0, "maximum": 1, "description": "Average score in most recent periods"},
+              "change": {"type": "number", "description": "Change magnitude (recent_avg - early_avg)"},
+              "change_type": {"type": "string", "description": "Significance of change (e.g., 'major_healing', 'minor_shift', 'stable')"},
+              "turning_points": {
+                "type": "array",
+                "description": "Periods with significant shifts",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "period": {"type": "string", "description": "When the shift occurred"},
+                    "event": {"type": "string", "description": "What happened"},
+                    "before": {"type": "number", "minimum": 0, "maximum": 1, "description": "Score before"},
+                    "after": {"type": "number", "minimum": 0, "maximum": 1, "description": "Score after"}
+                  },
+                  "required": ["period", "event", "before", "after"]
+                }
+              },
+              "narrative": {"type": "string", "description": "Story of growth/change for this trait"},
+              "aspect_evolution": {
+                "type": "object",
+                "description": "How each aspect evolved separately (allows tracking split development - e.g., Intellect increased but Openness to Experience stayed stable)",
+                "additionalProperties": {
+                  "type": "object",
+                  "properties": {
+                    "trajectory": {"type": "string", "description": "Aspect trajectory (e.g., 'increased', 'decreased', 'stable')"},
+                    "change": {"type": "string", "description": "Narrative of change (e.g., 'increased from 0.6 to 0.75')"}
+                  },
+                  "required": ["trajectory", "change"]
+                }
+              }
+            },
+            "required": ["trajectory", "earliest_average", "recent_average", "change", "change_type", "narrative", "aspect_evolution"]
+          }
+        },
+        "attachment": {
+          "type": "object",
+          "description": "Long-term attachment evolution (movement toward/away from secure attachment)",
+          "properties": {
+            "trajectory": {"type": "string", "description": "Overall pattern (e.g., 'healing toward secure', 'increasing anxiety', 'stable anxious')"},
+            "notes": {"type": "string", "description": "Anxiety/avoidance dimension changes, healing progress"}
+          },
+          "required": ["trajectory", "notes"],
+          "additionalProperties": false
+        },
+        "schwartz_values": {
+          "type": "object",
+          "description": "Value system evolution over time",
+          "properties": {
+            "trajectory": {"type": "string", "description": "Overall pattern (which values strengthened/weakened, value system maturation)"},
+            "notes": {"type": "string", "description": "Specific value shifts and value conflicts"}
+          },
+          "required": ["trajectory", "notes"],
+          "additionalProperties": false
+        },
+        "timeline_phases": {
+          "type": "array",
+          "description": "3-5 major phases in the person's psychological journey",
+          "items": {
+            "type": "object",
+            "properties": {
+              "period": {"type": "string", "description": "Date range for this phase"},
+              "theme": {"type": "string", "description": "Key theme defining this phase"},
+              "key_patterns": {"type": "array", "items": {"type": "string"}, "description": "Dominant patterns during this phase"}
+            },
+            "required": ["period", "theme", "key_patterns"]
+          }
+        },
+        "growth_summary": {"type": "string", "description": "200-300 word narrative of overall growth journey (defensive strategies that matured, coping improvements, healing trajectory)"},
+        "healing_progress": {"type": "string", "description": "Assessment of healing trajectory and current healing status"},
+        "growth_areas": {"type": "array", "items": {"type": "string"}, "description": "Dimensions showing healing/development"}
+      },
+      "required": ["big5", "timeline_phases", "growth_summary", "healing_progress", "growth_areas"]
+    },
+    "meta_patterns": {
+      "type": "object",
+      "description": "CORE IDENTITY - Universal consistencies that transcend time and context",
+      "properties": {
+        "stable_traits": {
+          "type": "object",
+          "description": "Traits present across all periods (never varied significantly)",
+          "properties": {
+            "big5": {"type": "object", "additionalProperties": {"type": "number"}, "description": "Big Five traits with <0.15 shift across timeline"},
+            "big5_aspects": {
+              "type": "object",
+              "description": "Aspects that remained stable across timeline (<0.15 shift) - core identity markers",
+              "additionalProperties": {
+                "type": "object",
+                "properties": {
+                  "average_score": {"type": "number", "minimum": 0, "maximum": 1, "description": "Average score across timeline"},
+                  "variance": {"type": "number", "minimum": 0, "description": "Variance across timeline (low = stable)"}
+                },
+                "required": ["average_score", "variance"]
+              }
+            },
+            "values": {"type": "array", "items": {"type": "string"}, "description": "Schwartz values always high"},
+            "archetypes": {"type": "array", "items": {"type": "string"}, "description": "Jungian archetypes always dominant"}
+          },
+          "required": ["big5", "big5_aspects", "values", "archetypes"]
+        },
+        "universal_if_then": {
+          "type": "array",
+          "description": "Behavioral patterns present in 80%+ of periods - core personality signatures",
+          "items": {
+            "type": "object",
+            "properties": {
+              "if_situation": {"type": "string", "description": "Situation trigger"},
+              "then_response": {"type": "string", "description": "Consistent response"},
+              "appears_in_periods": {"type": "array", "items": {"type": "string"}, "description": "List of periods where this pattern appeared"},
+              "consistency": {"type": "number", "minimum": 0, "maximum": 1, "description": "Percentage of periods showing this pattern (0.8+ for universal)"},
+              "confidence": {"type": "string", "enum": ["low", "medium", "high", "very_high"], "description": "Confidence in this universal pattern"}
+            },
+            "required": ["if_situation", "then_response", "appears_in_periods", "consistency", "confidence"]
+          }
+        },
+        "persistent_triggers": {"type": "array", "items": {"type": "string"}, "description": "Emotional triggers consistent across entire timeline"},
+        "core_contradictions": {"type": "array", "items": {"type": "string"}, "description": "Paradoxical trait combinations, values in tension, unresolved patterns"}
+      },
+      "required": ["stable_traits", "universal_if_then", "persistent_triggers", "core_contradictions"]
+    },
+    "shadow_needs": {
+      "type": "object",
+      "description": "What fantasy reveals about inner needs (ONLY RP data analysis - NOT claims about IRL behavior)",
+      "properties": {
+        "consistent_fantasy_themes": {
+          "type": "array",
+          "description": "What they repeatedly explore across many RPs",
+          "items": {
+            "type": "object",
+            "properties": {
+              "theme": {"type": "string", "description": "Fantasy theme (e.g., surrender/submission dynamics, power/vulnerability, control vs freedom)"},
+              "frequency": {"type": "string", "description": "How often it appears (e.g., 'Appears in 80% of RPs')"},
+              "intensity": {"type": "string", "enum": ["low", "medium", "high"], "description": "How intensely/deeply explored"},
+              "evidence": {"type": "string", "description": "What patterns show this theme"},
+              "possible_meanings": {"type": "array", "items": {"type": "string"}, "description": "Speculative interpretations (practice for IRL, processing emotions, core relational desires)"}
+            },
+            "required": ["theme", "frequency", "intensity", "evidence", "possible_meanings"]
+          }
+        },
+        "recurring_patterns": {
+          "type": "object",
+          "description": "Patterns that appear repeatedly",
+          "properties": {
+            "emotional_themes": {"type": "array", "items": {"type": "string"}, "description": "Emotions repeatedly explored (e.g., vulnerability, intensity, trust)"},
+            "relationship_dynamics": {"type": "array", "items": {"type": "string"}, "description": "Dynamics recreated (e.g., caretaking, dominance/submission)"},
+            "scenarios_revisited": {"type": "array", "items": {"type": "string"}, "description": "Scenarios explored again and again"}
+          },
+          "required": ["emotional_themes", "relationship_dynamics", "scenarios_revisited"]
+        },
+        "speculative_insights": {
+          "type": "object",
+          "description": "Interpretations with appropriate disclaimer",
+          "properties": {
+            "disclaimer": {"type": "string", "description": "Must state: 'These are interpretations of fantasy patterns, NOT claims about IRL behavior'"},
+            "possible_interpretations": {"type": "array", "items": {"type": "string"}, "description": "Careful speculation about what needs might underlie these patterns"}
+          },
+          "required": ["disclaimer", "possible_interpretations"]
+        },
+        "what_fantasy_reveals": {
+          "type": "object",
+          "description": "What we CAN say confidently about RP patterns",
+          "properties": {
+            "core_needs": {"type": "string", "description": "Based on RP patterns, what they consistently seek (whether met or unmet IRL is unknown)"},
+            "emotional_processing": {"type": "string", "description": "What they use RP to explore"},
+            "self_aspects": {"type": "string", "description": "What their fantasy life expresses about personality or desires"}
+          },
+          "required": ["core_needs", "emotional_processing", "self_aspects"]
+        }
+      },
+      "required": ["consistent_fantasy_themes", "recurring_patterns", "speculative_insights", "what_fantasy_reveals"]
+    },
+    "companion_export": {
+      "type": "object",
+      "description": "Package for AI companion to deeply understand this person - actionable strategies for personalization",
+      "properties": {
+        "personality_summary": {"type": "string", "description": "100-150 word narrative of who this person is NOW, their core traits, what drives them (use 3rd person: they/their/this person)"},
+        "current_traits": {
+          "type": "object",
+          "description": "Current psychological profile for quick reference",
+          "properties": {
+            "big5": {
+              "type": "object",
+              "description": "Big Five scores (recency-weighted)",
+              "properties": {
+                "openness": {"type": "number", "minimum": 0, "maximum": 1},
+                "conscientiousness": {"type": "number", "minimum": 0, "maximum": 1},
+                "extraversion": {"type": "number", "minimum": 0, "maximum": 1},
+                "agreeableness": {"type": "number", "minimum": 0, "maximum": 1},
+                "neuroticism": {"type": "number", "minimum": 0, "maximum": 1}
+              },
+              "required": ["openness", "conscientiousness", "extraversion", "agreeableness", "neuroticism"]
+            },
+            "attachment": {"type": "string", "description": "Attachment style with healing context (e.g., 'anxious (healing toward secure)')"},
+            "top_values": {"type": "array", "items": {"type": "string"}, "description": "Top 3 Schwartz values"},
+            "dominant_archetypes": {"type": "array", "items": {"type": "string"}, "description": "Top 3-4 Jungian archetypes"}
+          },
+          "required": ["big5", "attachment", "top_values", "dominant_archetypes"]
+        },
+        "interaction_preferences": {
+          "type": "object",
+          "description": "How to interact with this person effectively",
+          "properties": {
+            "communication_style": {"type": "string", "description": "Preferred style (e.g., 'Direct, intellectual, values depth over small talk')"},
+            "pacing": {"type": "string", "description": "Interaction pacing (e.g., 'Slow warm-up, then deep and fast')"},
+            "validation_needs": {"type": "array", "items": {"type": "string"}, "description": "What they need acknowledged (e.g., competence, autonomy, emotional safety)"},
+            "openness_to_vulnerability": {"type": "string", "description": "Vulnerability comfort level with conditions"}
+          },
+          "required": ["communication_style", "pacing", "validation_needs", "openness_to_vulnerability"]
+        },
+        "trigger_management": {
+          "type": "object",
+          "description": "How to handle difficult moments - specific, actionable guidance",
+          "properties": {
+            "activating_triggers": {"type": "array", "items": {"type": "string"}, "description": "What causes attachment/stress activation"},
+            "soothing_strategies": {"type": "array", "items": {"type": "string"}, "description": "What helps them regulate (specific techniques, not generalities)"},
+            "early_warning_signs": {"type": "array", "items": {"type": "string"}, "description": "How to detect rising distress"}
+          },
+          "required": ["activating_triggers", "soothing_strategies", "early_warning_signs"]
+        },
+        "growth_context": {
+          "type": "object",
+          "description": "Understanding their healing journey and current growth",
+          "properties": {
+            "healing_journey": {"type": "string", "description": "Narrative of their growth over time (use 3rd person: 'They evolved from...')"},
+            "current_phase": {"type": "string", "description": "Where they are in their journey now (use 3rd person: 'They are currently...')"},
+            "recent_progress": {"type": "array", "items": {"type": "string"}, "description": "Specific improvements with evidence (use 3rd person: 'Their compassion grew from 0.25 to 0.58', 'Their conscientiousness recovered')"},
+            "growth_edges": {"type": "array", "items": {"type": "string"}, "description": "Current challenges and opportunities (use 3rd person: 'They are learning to recognize when...')"},
+            "celebrate": {"type": "array", "items": {"type": "string"}, "description": "Major wins and breakthroughs to acknowledge (use 3rd person: 'They successfully integrated...')"}
+          },
+          "required": ["healing_journey", "current_phase", "recent_progress", "growth_edges", "celebrate"]
+        },
+        "relationship_wisdom": {
+          "type": "object",
+          "description": "Deep relational patterns and how to work with them",
+          "properties": {
+            "attachment_style_notes": {"type": "string", "description": "How attachment manifests, what to watch for (e.g., push-pull patterns)"},
+            "conflict_style": {"type": "string", "description": "Typical patterns and best approaches (e.g., 'Initial intellectualization, then emotional flooding')"},
+            "intimacy_comfort": {"type": "string", "description": "Capacity and preferences for deep connection"},
+            "past_patterns_to_watch": {"type": "array", "items": {"type": "string"}, "description": "Recurring dynamics to be aware of"}
+          },
+          "required": ["attachment_style_notes", "conflict_style", "intimacy_comfort", "past_patterns_to_watch"]
+        }
+      },
+      "required": ["personality_summary", "current_traits", "interaction_preferences", "trigger_management", "growth_context", "relationship_wisdom"]
+    },
+    "life_summary": {
+      "type": "string",
+      "description": "300-400 word clinical narrative painting the complete portrait"
+    },
+    "synthesis_confidence": {
+      "type": "object",
+      "properties": {
+        "current_state": {"type": "string", "enum": ["low", "medium", "high", "very_high"]},
+        "evolution_analysis": {"type": "string", "enum": ["low", "medium", "high", "very_high"]},
+        "meta_patterns": {"type": "string", "enum": ["low", "medium", "high", "very_high"]},
+        "notes": {"type": "string"}
+      },
+      "required": ["current_state", "evolution_analysis", "meta_patterns", "notes"]
+    }
+  },
+  "required": ["thinking", "profile_id", "data_summary", "current_state", "evolution", "meta_patterns", "shadow_needs", "companion_export", "life_summary", "synthesis_confidence"],
+  "additionalProperties": false
+}

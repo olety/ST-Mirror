@@ -1,0 +1,419 @@
+{
+  "type": "object",
+  "properties": {
+    "thinking": {
+      "type": "string",
+      "description": "Step-by-step reasoning about patterns observed (for Kimi K2)"
+    },
+    "profile_id": {
+      "type": "string",
+      "description": "Unique identifier for this profile"
+    },
+    "data_summary": {
+      "type": "object",
+      "description": "Summary of evidence analyzed from this branch",
+      "properties": {
+        "total_chunks": {"type": "integer", "description": "Number of message chunks analyzed"},
+        "total_decisions": {"type": "integer", "description": "Number of decisions identified"},
+        "total_emotional_moments": {"type": "integer", "description": "Number of emotional moments identified"},
+        "ic_ooc_ratio": {"type": "number", "minimum": 0, "maximum": 1, "description": "Ratio of in-character to out-of-character content (higher = more IC)"}
+      },
+      "required": ["total_chunks", "total_decisions", "total_emotional_moments", "ic_ooc_ratio"]
+    },
+    "big_five": {
+      "type": "object",
+      "description": "Big Five personality trait assessment from this RP branch",
+      "properties": {
+        "openness": {
+          "type": "object",
+          "description": "Creativity, curiosity, openness to experience",
+          "properties": {
+            "score": {"type": "number", "minimum": 0, "maximum": 1, "description": "Openness score for this branch"},
+            "confidence": {"type": "string", "enum": ["low", "medium", "high"], "description": "Confidence in this assessment"},
+            "evidence": {"type": "array", "items": {"type": "string"}, "description": "Specific decisions/quotes supporting this score"},
+            "aspects": {
+              "type": "object",
+              "description": "Openness sub-facets for finer granularity",
+              "properties": {
+                "intellect": {
+                  "type": "object",
+                  "description": "Abstract reasoning, philosophical curiosity, intellectual exploration",
+                  "properties": {
+                    "score": {"type": "number", "minimum": 0, "maximum": 1, "description": "Intellect aspect score"},
+                    "confidence": {"type": "string", "enum": ["low", "medium", "high"]},
+                    "evidence": {"type": "array", "items": {"type": "string"}}
+                  },
+                  "required": ["score", "confidence", "evidence"]
+                },
+                "openness_to_experience": {
+                  "type": "object",
+                  "description": "Aesthetic appreciation, imagination, emotional/sensory openness",
+                  "properties": {
+                    "score": {"type": "number", "minimum": 0, "maximum": 1, "description": "Openness to Experience aspect score"},
+                    "confidence": {"type": "string", "enum": ["low", "medium", "high"]},
+                    "evidence": {"type": "array", "items": {"type": "string"}}
+                  },
+                  "required": ["score", "confidence", "evidence"]
+                }
+              },
+              "required": ["intellect", "openness_to_experience"]
+            }
+          },
+          "required": ["score", "confidence", "evidence", "aspects"]
+        },
+        "conscientiousness": {
+          "type": "object",
+          "description": "Organization, dependability, self-discipline",
+          "properties": {
+            "score": {"type": "number", "minimum": 0, "maximum": 1, "description": "Conscientiousness score for this branch"},
+            "confidence": {"type": "string", "enum": ["low", "medium", "high"], "description": "Confidence in this assessment"},
+            "evidence": {"type": "array", "items": {"type": "string"}, "description": "Specific decisions/quotes supporting this score"},
+            "aspects": {
+              "type": "object",
+              "description": "Conscientiousness sub-facets for finer granularity",
+              "properties": {
+                "industriousness": {
+                  "type": "object",
+                  "description": "Hard work, achievement striving, productivity, persistence",
+                  "properties": {
+                    "score": {"type": "number", "minimum": 0, "maximum": 1, "description": "Industriousness aspect score"},
+                    "confidence": {"type": "string", "enum": ["low", "medium", "high"]},
+                    "evidence": {"type": "array", "items": {"type": "string"}}
+                  },
+                  "required": ["score", "confidence", "evidence"]
+                },
+                "orderliness": {
+                  "type": "object",
+                  "description": "Organization, tidiness, structure, planning, attention to detail",
+                  "properties": {
+                    "score": {"type": "number", "minimum": 0, "maximum": 1, "description": "Orderliness aspect score"},
+                    "confidence": {"type": "string", "enum": ["low", "medium", "high"]},
+                    "evidence": {"type": "array", "items": {"type": "string"}}
+                  },
+                  "required": ["score", "confidence", "evidence"]
+                }
+              },
+              "required": ["industriousness", "orderliness"]
+            }
+          },
+          "required": ["score", "confidence", "evidence", "aspects"]
+        },
+        "extraversion": {
+          "type": "object",
+          "description": "Sociability, assertiveness, emotional expression",
+          "properties": {
+            "score": {"type": "number", "minimum": 0, "maximum": 1, "description": "Extraversion score for this branch"},
+            "confidence": {"type": "string", "enum": ["low", "medium", "high"], "description": "Confidence in this assessment"},
+            "evidence": {"type": "array", "items": {"type": "string"}, "description": "Specific decisions/quotes supporting this score"},
+            "aspects": {
+              "type": "object",
+              "description": "Extraversion sub-facets for finer granularity",
+              "properties": {
+                "enthusiasm": {
+                  "type": "object",
+                  "description": "Positive emotion, warmth, energy, sociability, friendliness",
+                  "properties": {
+                    "score": {"type": "number", "minimum": 0, "maximum": 1, "description": "Enthusiasm aspect score"},
+                    "confidence": {"type": "string", "enum": ["low", "medium", "high"]},
+                    "evidence": {"type": "array", "items": {"type": "string"}}
+                  },
+                  "required": ["score", "confidence", "evidence"]
+                },
+                "assertiveness": {
+                  "type": "object",
+                  "description": "Dominance, leadership, boldness in social settings, taking charge",
+                  "properties": {
+                    "score": {"type": "number", "minimum": 0, "maximum": 1, "description": "Assertiveness aspect score"},
+                    "confidence": {"type": "string", "enum": ["low", "medium", "high"]},
+                    "evidence": {"type": "array", "items": {"type": "string"}}
+                  },
+                  "required": ["score", "confidence", "evidence"]
+                }
+              },
+              "required": ["enthusiasm", "assertiveness"]
+            }
+          },
+          "required": ["score", "confidence", "evidence", "aspects"]
+        },
+        "agreeableness": {
+          "type": "object",
+          "description": "Cooperation, trust, empathy",
+          "properties": {
+            "score": {"type": "number", "minimum": 0, "maximum": 1, "description": "Agreeableness score for this branch"},
+            "confidence": {"type": "string", "enum": ["low", "medium", "high"], "description": "Confidence in this assessment"},
+            "evidence": {"type": "array", "items": {"type": "string"}, "description": "Specific decisions/quotes supporting this score"},
+            "aspects": {
+              "type": "object",
+              "description": "Agreeableness sub-facets for finer granularity",
+              "properties": {
+                "compassion": {
+                  "type": "object",
+                  "description": "Empathy, warmth, caring for others' wellbeing, sympathy",
+                  "properties": {
+                    "score": {"type": "number", "minimum": 0, "maximum": 1, "description": "Compassion aspect score"},
+                    "confidence": {"type": "string", "enum": ["low", "medium", "high"]},
+                    "evidence": {"type": "array", "items": {"type": "string"}}
+                  },
+                  "required": ["score", "confidence", "evidence"]
+                },
+                "politeness": {
+                  "type": "object",
+                  "description": "Respect for social norms, deference, avoiding conflict, cooperation",
+                  "properties": {
+                    "score": {"type": "number", "minimum": 0, "maximum": 1, "description": "Politeness aspect score"},
+                    "confidence": {"type": "string", "enum": ["low", "medium", "high"]},
+                    "evidence": {"type": "array", "items": {"type": "string"}}
+                  },
+                  "required": ["score", "confidence", "evidence"]
+                }
+              },
+              "required": ["compassion", "politeness"]
+            }
+          },
+          "required": ["score", "confidence", "evidence", "aspects"]
+        },
+        "neuroticism": {
+          "type": "object",
+          "description": "Emotional instability, anxiety, moodiness",
+          "properties": {
+            "score": {"type": "number", "minimum": 0, "maximum": 1, "description": "Neuroticism score for this branch"},
+            "confidence": {"type": "string", "enum": ["low", "medium", "high"], "description": "Confidence in this assessment"},
+            "evidence": {"type": "array", "items": {"type": "string"}, "description": "Specific decisions/quotes supporting this score"},
+            "aspects": {
+              "type": "object",
+              "description": "Neuroticism sub-facets for finer granularity",
+              "properties": {
+                "volatility": {
+                  "type": "object",
+                  "description": "Anger, irritability, mood swings, emotional instability, reactivity",
+                  "properties": {
+                    "score": {"type": "number", "minimum": 0, "maximum": 1, "description": "Volatility aspect score"},
+                    "confidence": {"type": "string", "enum": ["low", "medium", "high"]},
+                    "evidence": {"type": "array", "items": {"type": "string"}}
+                  },
+                  "required": ["score", "confidence", "evidence"]
+                },
+                "withdrawal": {
+                  "type": "object",
+                  "description": "Anxiety, depression, self-consciousness, vulnerability to stress",
+                  "properties": {
+                    "score": {"type": "number", "minimum": 0, "maximum": 1, "description": "Withdrawal aspect score"},
+                    "confidence": {"type": "string", "enum": ["low", "medium", "high"]},
+                    "evidence": {"type": "array", "items": {"type": "string"}}
+                  },
+                  "required": ["score", "confidence", "evidence"]
+                }
+              },
+              "required": ["volatility", "withdrawal"]
+            }
+          },
+          "required": ["score", "confidence", "evidence", "aspects"]
+        }
+      },
+      "required": ["openness", "conscientiousness", "extraversion", "agreeableness", "neuroticism"]
+    },
+    "attachment": {
+      "type": "object",
+      "description": "Attachment style based on relationship patterns in this branch",
+      "properties": {
+        "primary_style": {"type": "string", "enum": ["secure", "anxious", "avoidant", "disorganized"], "description": "Primary attachment style observed"},
+        "anxiety_dimension": {"type": "number", "minimum": 0, "maximum": 1, "description": "Fear of abandonment (0=low, 1=high)"},
+        "avoidance_dimension": {"type": "number", "minimum": 0, "maximum": 1, "description": "Discomfort with intimacy (0=low, 1=high)"},
+        "evidence": {"type": "array", "items": {"type": "string"}, "description": "Relationship dynamics demonstrating this style"}
+      },
+      "required": ["primary_style", "anxiety_dimension", "avoidance_dimension", "evidence"]
+    },
+    "behavioral_patterns": {
+      "type": "array",
+      "description": "Consistent if-then behavioral patterns observed (minimum 3)",
+      "items": {
+        "type": "object",
+        "properties": {
+          "if_situation": {"type": "string", "description": "Triggering situation or context"},
+          "then_response": {"type": "string", "description": "Consistent response pattern"},
+          "frequency": {"type": "number", "minimum": 0, "maximum": 1, "description": "How often this pattern appears (0=rare, 1=always)"},
+          "confidence": {"type": "string", "enum": ["low", "medium", "high"], "description": "Confidence in this pattern"}
+        },
+        "required": ["if_situation", "then_response", "frequency", "confidence"]
+      }
+    },
+    "emotional_profile": {
+      "type": "object",
+      "description": "Emotional landscape and regulation in this branch",
+      "properties": {
+        "dominant_emotions": {"type": "array", "items": {"type": "string"}, "description": "Most frequent emotions expressed"},
+        "emotional_range": {"type": "string", "enum": ["narrow", "moderate", "wide"], "description": "Breadth of emotional expression"},
+        "regulation_strategies": {"type": "array", "items": {"type": "string"}, "description": "How emotions are managed"},
+        "common_triggers": {"type": "array", "items": {"type": "string"}, "description": "What triggers emotional responses"}
+      },
+      "required": ["dominant_emotions", "emotional_range", "regulation_strategies", "common_triggers"]
+    },
+    "schwartz_values": {
+      "type": "object",
+      "description": "Schwartz's 10 universal values - what drives behavior in this branch",
+      "properties": {
+        "self_direction": {
+          "type": "object",
+          "description": "Independent thought/action, creativity, exploration (choosing freedom, curiosity, independence)",
+          "properties": {
+            "score": {"type": "number", "minimum": 0, "maximum": 1, "description": "How much this value drives behavior"},
+            "confidence": {"type": "string", "enum": ["low", "medium", "high"]},
+            "evidence": {"type": "array", "items": {"type": "string"}, "description": "Actual choices demonstrating this value"}
+          },
+          "required": ["score", "confidence", "evidence"]
+        },
+        "stimulation": {
+          "type": "object",
+          "description": "Excitement, novelty, challenge in life (choosing adventure, risk, variety)",
+          "properties": {
+            "score": {"type": "number", "minimum": 0, "maximum": 1, "description": "How much this value drives behavior"},
+            "confidence": {"type": "string", "enum": ["low", "medium", "high"]},
+            "evidence": {"type": "array", "items": {"type": "string"}, "description": "Actual choices demonstrating this value"}
+          },
+          "required": ["score", "confidence", "evidence"]
+        },
+        "hedonism": {
+          "type": "object",
+          "description": "Pleasure, sensuous gratification (choosing comfort, enjoyment, self-gratification)",
+          "properties": {
+            "score": {"type": "number", "minimum": 0, "maximum": 1, "description": "How much this value drives behavior"},
+            "confidence": {"type": "string", "enum": ["low", "medium", "high"]},
+            "evidence": {"type": "array", "items": {"type": "string"}, "description": "Actual choices demonstrating this value"}
+          },
+          "required": ["score", "confidence", "evidence"]
+        },
+        "achievement": {
+          "type": "object",
+          "description": "Personal success through demonstrating competence (choosing ambition, success, capability)",
+          "properties": {
+            "score": {"type": "number", "minimum": 0, "maximum": 1, "description": "How much this value drives behavior"},
+            "confidence": {"type": "string", "enum": ["low", "medium", "high"]},
+            "evidence": {"type": "array", "items": {"type": "string"}, "description": "Actual choices demonstrating this value"}
+          },
+          "required": ["score", "confidence", "evidence"]
+        },
+        "power": {
+          "type": "object",
+          "description": "Social status, prestige, control over people/resources (choosing authority, wealth, social power)",
+          "properties": {
+            "score": {"type": "number", "minimum": 0, "maximum": 1, "description": "How much this value drives behavior"},
+            "confidence": {"type": "string", "enum": ["low", "medium", "high"]},
+            "evidence": {"type": "array", "items": {"type": "string"}, "description": "Actual choices demonstrating this value"}
+          },
+          "required": ["score", "confidence", "evidence"]
+        },
+        "security": {
+          "type": "object",
+          "description": "Safety, harmony, stability of society/relationships/self (choosing safety, order, stability)",
+          "properties": {
+            "score": {"type": "number", "minimum": 0, "maximum": 1, "description": "How much this value drives behavior"},
+            "confidence": {"type": "string", "enum": ["low", "medium", "high"]},
+            "evidence": {"type": "array", "items": {"type": "string"}, "description": "Actual choices demonstrating this value"}
+          },
+          "required": ["score", "confidence", "evidence"]
+        },
+        "conformity": {
+          "type": "object",
+          "description": "Restraint of actions that might harm others or violate norms (choosing obedience, self-discipline, politeness)",
+          "properties": {
+            "score": {"type": "number", "minimum": 0, "maximum": 1, "description": "How much this value drives behavior"},
+            "confidence": {"type": "string", "enum": ["low", "medium", "high"]},
+            "evidence": {"type": "array", "items": {"type": "string"}, "description": "Actual choices demonstrating this value"}
+          },
+          "required": ["score", "confidence", "evidence"]
+        },
+        "tradition": {
+          "type": "object",
+          "description": "Respect for customs, accepting cultural/religious traditions (choosing humility, devotion, respect for tradition)",
+          "properties": {
+            "score": {"type": "number", "minimum": 0, "maximum": 1, "description": "How much this value drives behavior"},
+            "confidence": {"type": "string", "enum": ["low", "medium", "high"]},
+            "evidence": {"type": "array", "items": {"type": "string"}, "description": "Actual choices demonstrating this value"}
+          },
+          "required": ["score", "confidence", "evidence"]
+        },
+        "benevolence": {
+          "type": "object",
+          "description": "Preserving/enhancing welfare of close others (choosing helpfulness, loyalty, forgiveness)",
+          "properties": {
+            "score": {"type": "number", "minimum": 0, "maximum": 1, "description": "How much this value drives behavior"},
+            "confidence": {"type": "string", "enum": ["low", "medium", "high"]},
+            "evidence": {"type": "array", "items": {"type": "string"}, "description": "Actual choices demonstrating this value"}
+          },
+          "required": ["score", "confidence", "evidence"]
+        },
+        "universalism": {
+          "type": "object",
+          "description": "Understanding, appreciation, tolerance for all people and nature (choosing social justice, equality, wisdom, unity with nature)",
+          "properties": {
+            "score": {"type": "number", "minimum": 0, "maximum": 1, "description": "How much this value drives behavior"},
+            "confidence": {"type": "string", "enum": ["low", "medium", "high"]},
+            "evidence": {"type": "array", "items": {"type": "string"}, "description": "Actual choices demonstrating this value"}
+          },
+          "required": ["score", "confidence", "evidence"]
+        }
+      },
+      "required": ["self_direction", "stimulation", "hedonism", "achievement", "power", "security", "conformity", "tradition", "benevolence", "universalism"]
+    },
+    "jungian_archetypes": {
+      "type": "object",
+      "description": "Dominant Jungian archetypes identified from behavioral and narrative patterns in this branch",
+      "properties": {
+        "dominant_archetypes": {
+          "type": "array",
+          "description": "Identified archetypes with strength scores (e.g., The Hero, The Shadow, The Sage, The Explorer, The Lover, The Caregiver)",
+          "items": {
+            "type": "object",
+            "properties": {
+              "archetype": {"type": "string", "description": "Archetype name (e.g., The Hero, The Shadow, The Sage, The Explorer, The Lover)"},
+              "strength": {"type": "number", "minimum": 0, "maximum": 1, "description": "How prominently this archetype manifests in this branch"},
+              "confidence": {"type": "string", "enum": ["low", "medium", "high"], "description": "Confidence in this archetype identification"},
+              "evidence": {"type": "array", "items": {"type": "string"}, "description": "Behavioral and narrative patterns demonstrating this archetype"}
+            },
+            "required": ["archetype", "strength", "confidence", "evidence"]
+          }
+        },
+        "shadow_work": {"type": "string", "description": "Shadow integration patterns - how repressed/denied aspects manifest (integration vs. suppression)"},
+        "archetype_conflicts": {"type": "array", "items": {"type": "string"}, "description": "Tensions between archetypes (e.g., Hero rejecting Caregiver needs, Sage suppressing Trickster)"}
+      },
+      "required": ["dominant_archetypes", "shadow_work", "archetype_conflicts"]
+    },
+    "defense_mechanisms": {
+      "type": "object",
+      "description": "Observable coping strategies and psychological defenses in this branch",
+      "properties": {
+        "primary": {"type": "array", "items": {"type": "string"}, "description": "Primary defense mechanisms used (e.g., rationalization, projection, displacement, sublimation)"},
+        "situations": {"type": "array", "items": {"type": "string"}, "description": "Specific situations or triggers that activate these defenses"},
+        "effectiveness": {"type": "string", "enum": ["low", "moderate", "high"], "description": "How well these defenses manage stress/emotion"}
+      },
+      "required": ["primary", "situations", "effectiveness"]
+    },
+    "relationship_patterns": {
+      "type": "object",
+      "description": "How the person navigates relationships and interpersonal dynamics in this branch",
+      "properties": {
+        "power_preference": {"type": "string", "description": "Preferred power dynamics (e.g., dominance, submission, equality, fluid/context-dependent)"},
+        "intimacy_comfort": {"type": "string", "description": "Comfort level with emotional/physical intimacy (e.g., high comfort, guarded, ambivalent)"},
+        "boundary_setting": {"type": "string", "enum": ["weak", "moderate", "strong"], "description": "Ability to set and maintain personal boundaries"},
+        "conflict_style": {"type": "string", "description": "Typical conflict resolution approach (e.g., avoidant, confrontational, collaborative, passive-aggressive)"}
+      },
+      "required": ["power_preference", "intimacy_comfort", "boundary_setting", "conflict_style"]
+    },
+    "blind_spots": {
+      "type": "array",
+      "description": "Patterns the person might not recognize in themselves - areas of limited self-awareness",
+      "items": {"type": "string"}
+    },
+    "contradictions": {
+      "type": "array",
+      "description": "Tensions between stated values and observed behavior, or conflicting patterns within the profile",
+      "items": {"type": "string"}
+    },
+    "profile_summary": {
+      "type": "string",
+      "description": "200-300 word narrative summary"
+    }
+  },
+  "required": ["profile_id", "data_summary", "big_five", "attachment", "behavioral_patterns", "emotional_profile", "schwartz_values", "jungian_archetypes", "defense_mechanisms", "relationship_patterns", "blind_spots", "contradictions", "profile_summary"],
+  "additionalProperties": false
+}

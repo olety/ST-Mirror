@@ -1,0 +1,9 @@
+{"user_name":"Alex","character_name":"Brevity Bot","create_date":"2025-06-01@10h00m00s","chat_metadata":{"integrity":"test-filter-sample-uuid","chat_id_hash":1111111111111111,"note_prompt":"","note_interval":1,"note_position":1,"note_depth":4,"note_role":0,"timedWorldInfo":{"sticky":{},"cooldown":{}},"tainted":false,"lastInContextMessageId":0}}
+{"name":"Brevity Bot","is_user":false,"send_date":1717232400000,"mes":"Hello there! I'm a test character for the filtering system."}
+{"name":"Alex","is_user":true,"send_date":1717232401000,"mes":"Hi! This chat is intentionally short."}
+{"name":"Brevity Bot","is_user":false,"send_date":1717232402000,"mes":"Indeed. We're testing the min_arc_length filter."}
+{"name":"Alex","is_user":true,"send_date":1717232403000,"mes":"Should get filtered out since we're under 50 messages."}
+{"name":"Brevity Bot","is_user":false,"send_date":1717232404000,"mes":"Correct! This helps test the branch classification system."}
+{"name":"Alex","is_user":true,"send_date":1717232405000,"mes":"Good for testing without cluttering real data."}
+{"name":"Brevity Bot","is_user":false,"send_date":1717232406000,"mes":"Exactly. Now we say goodbye."}
+{"name":"Alex","is_user":true,"send_date":1717232407000,"mes":"Goodbye, Brevity Bot!"}
